@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.about-us {
+  display: flex;
+  align-items: center;
+
+  padding: 70px 100px;
+}
+
+.about-us-body {
+  gap: 20px;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+.about-us-head {
+    gap: 9px;
+    display: flex;
+    flex-direction: column;
+} 
+
+.about-us-heading {
+  font-family: "Archivo";
+  color: #323842;
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.about-us-description {
+  color: #323842;
+  font-size: 14px;
+}
+
+.about-us-text {
+    font-size: 17px;
+    line-height: 150%;
+}
+
+.button-learn-more {
+  border-color: #636ae8;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 26px;
+  padding: 15px 60px;
+
+  color: #636ae8;
+  font-family: "Inter";
+  font-weight: 800;
+}

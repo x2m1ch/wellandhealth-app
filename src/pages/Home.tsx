@@ -1,3 +1,4 @@
+import { AboutUs } from "../modules/home/AboutUs";
 import { Header } from "../modules/home/Header";
 import { Hero } from "../modules/home/Hero";
 
@@ -8,6 +9,7 @@ export const Home = () => {
     <>
       <Header />
       <Hero />
+      <AboutUs />
     </>
   );
 };
