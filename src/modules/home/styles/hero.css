@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.hero {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-body {
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-heading {
+  text-align: center;
+  color: #171a1f;
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.button-auth-hero {
+  background-color: white;
+  padding: 15px 80px;
+  border-radius: 26px;
+
+  color: #636ae8;
+  font-family: "Inter";
+  font-weight: 800;
+  font-size: 20px;
+}

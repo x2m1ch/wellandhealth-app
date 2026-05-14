@@ -1,7 +1,13 @@
-import { Header } from "../modules/Home/Header";
+import { Header } from "../modules/home/Header";
+import { Hero } from "../modules/home/Hero";
 
 import "./styles/home.css";
 
 export const Home = () => {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <Hero />
+    </>
+  );
 };
