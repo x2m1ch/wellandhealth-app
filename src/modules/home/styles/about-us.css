@@ -3,8 +3,6 @@
 .about-us {
   display: flex;
   align-items: center;
-
-  padding: 70px 100px;
 }
 
 .about-us-body {
@@ -19,18 +17,6 @@
     display: flex;
     flex-direction: column;
 } 
-
-.about-us-heading {
-  font-family: "Archivo";
-  color: #323842;
-  font-size: 52px;
-  font-weight: 700;
-}
-
-.about-us-description {
-  color: #323842;
-  font-size: 14px;
-}
 
 .about-us-text {
     font-size: 17px;

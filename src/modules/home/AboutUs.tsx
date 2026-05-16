@@ -8,10 +8,10 @@ export const AboutUs = () => {
     <section className="about-us">
       <section className="about-us-body">
         <section className="about-us-head">
-          <p className="about-us-description">
+          <p className="description">
             Dolore dolore voluptate aliqua ut mi
           </p>
-          <h2 className="about-us-heading">About Us</h2>
+          <h2>About Us</h2>
           <img src={line} alt="" />
         </section>
         <p className="about-us-text">
