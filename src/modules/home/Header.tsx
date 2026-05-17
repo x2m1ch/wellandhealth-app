@@ -2,36 +2,51 @@ import { Link } from "react-router";
 
 import "./styles/header.css";
 
+interface Link {
+  to: string,
+  body: string
+}
+
+const LINKS: Link[] = [
+  {
+    to: "/",
+    body: "Home"
+  },
+  {
+    to: "/about",
+    body: "About us"
+  },
+  {
+    to: "/yoga",
+    body: "Yoga"
+  },
+  {
+    to: "/ayurvedic",
+    body: "Ayurvedic"
+  },
+  {
+    to: "/helpcenter",
+    body: "Help Center"
+  },
+  {
+    to: "/contacts",
+    body: "Contact us"
+  },
+  {
+    to: "/help",
+    body: "FAQs"
+  }
+] 
+
 export const Header = () => {
   return (
     <header>
       <h1>Ayuvista</h1>
       <section className="nav-and-auth">
         <nav>
-          <Link className="links" to="/">
-            Home
-          </Link>
-          <Link className="links" to="/about">
-            About us
-          </Link>
-          <Link className="links" to="/yoga">
-            Yoga
-          </Link>
-          <Link className="links" to="/ayurvedic">
-            Ayurvedic
-          </Link>
-          <Link className="links" to="/pricing">
-            Pricing
-          </Link>
-          <Link className="links" to="/helpcenter">
-            Help Center
-          </Link>
-          <Link className="links" to="/contacts">
-            Contact us
-          </Link>
-          <Link className="links" to="/help">
-            FAQs
-          </Link>
+          {LINKS.map((link) => (
+            <Link className="links" to={link.to}>{link.body}</Link>
+          ))}
         </nav>
         <section className="auth">
           <p className="auth-items login">Login</p>
