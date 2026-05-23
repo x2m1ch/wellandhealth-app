@@ -1,0 +1,24 @@
+.our-products {
+    display: flex;
+    justify-content: center;
+}
+
+.our-products-head {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.our-products-buttons {
+    display: flex;
+
+    color: #636AE8;
+}
+
+.our-products-buttons:active {
+    background-color: #636AE8;
+    padding: 3px 8px;
+    border: 6px;
+
+    color: white;
+}
