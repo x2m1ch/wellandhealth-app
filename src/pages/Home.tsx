@@ -8,10 +8,8 @@ import "./styles/home.css";
 export const Home = () => {
   return (
     <>
-      <section>
-        <Header />
-        <Hero />
-      </section>
+      <Header />
+      <Hero />
       <section className="home-body">
         <AboutUs />
         <Features />
