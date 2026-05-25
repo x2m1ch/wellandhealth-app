@@ -2,12 +2,12 @@ import { Link } from "react-router";
 
 import "./styles/header.css";
 
-interface Link {
+interface NavLink {
   to: string,
   body: string
 }
 
-const LINKS: Link[] = [
+const LINKS: NavLink[] = [
   {
     to: "/",
     body: "Home"

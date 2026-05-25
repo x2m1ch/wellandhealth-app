@@ -21,6 +21,12 @@ h2 {
   font-weight: 700;
 }
 
+h3 {
+  font-family: "Archivo";
+  color: #171A1F;
+  font-weight: 800;
+}
+
 .home-body {
   gap: 60px;
   display: flex;
