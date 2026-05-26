@@ -1,0 +1,13 @@
+.switch-information-buttons {
+    gap: 60px;
+    display: flex;
+    justify-content: center;
+
+    color: #636AE8;
+}
+
+.information-button-active {
+    background-color: #CED0F8;
+    border-radius: 6px;
+    padding: 13px 70px;
+}
