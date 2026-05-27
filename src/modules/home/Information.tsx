@@ -30,7 +30,7 @@ export const Information = () => {
             >
               {buttons}
             </button>
-            {isActive ? "": <img src={line} alt="" />}
+            <img src={line} alt="" />
           </>
         );
       } else {
