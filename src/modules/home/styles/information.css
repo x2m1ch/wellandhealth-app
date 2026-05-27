@@ -1,3 +1,9 @@
+.information {
+    gap: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
 .switch-information-buttons {
     gap: 60px;
     display: flex;
@@ -10,4 +16,37 @@
     background-color: #CED0F8;
     border-radius: 6px;
     padding: 13px 70px;
+}
+
+.information-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.information-text {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    max-width: 500px;
+    line-height: 26px;
+    font-family: "Inter";
+    color: #323842;
+}
+
+.information-main-heading {
+    font-size: 40px;
+}
+
+.information-blocks {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.information-headings {
+    color: #323842;
+    font-weight: 700;
+    font-size: 20px;
 }
