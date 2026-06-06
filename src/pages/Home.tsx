@@ -11,13 +11,14 @@ export const Home = () => {
   return (
     <>
       <Header />
-      <Hero />
-      <section className="home-body">
+
+      <main className="home-body">
+        <Hero />
         <AboutUs />
         <Features />
-        <OurProducts />
         <Information />
-      </section>
+        <OurProducts />
+      </main>
     </>
   );
 };

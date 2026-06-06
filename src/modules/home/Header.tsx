@@ -40,19 +40,20 @@ const LINKS: NavLink[] = [
 
 export const Header = () => {
   return (
-    <header>
+    <header className="header">
       <h1>Ayuvista</h1>
-      <section className="nav-and-auth">
-        <nav>
+
+      <div className="nav-and-auth">
+        <nav className="header-nav">
           {LINKS.map((link) => (
             <Link className="links" to={link.to}>{link.body}</Link>
           ))}
         </nav>
-        <section className="auth">
-          <p className="auth-items login">Login</p>
+        <div className="auth">
+          <button className="auth-items login">Login</button>
           <button className="auth-items get-free">Try for free</button>
-        </section>
-      </section>
+        </div>
+      </div>
     </header>
   );
 };

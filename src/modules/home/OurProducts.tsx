@@ -8,6 +8,7 @@ interface Product {
   description: string;
   price: number;
   discountPrice: number;
+  title: string,
 }
 
 const PRODUCTS: Product[] = [
@@ -17,6 +18,7 @@ const PRODUCTS: Product[] = [
     description: "Deserunt non fugiat aute cons",
     price: 32,
     discountPrice: 42,
+    title: "Product title",
   },
   {
     icon: "/home/our-products/product-two.png",
@@ -24,6 +26,7 @@ const PRODUCTS: Product[] = [
     description: "Ut nostrud esse aute ipsum vo",
     price: 22,
     discountPrice: 28,
+    title: "Product title",
   },
   {
     icon: "/home/our-products/product-three.png",
@@ -31,13 +34,15 @@ const PRODUCTS: Product[] = [
     description: "Culpa ea exercitation amet co",
     price: 18,
     discountPrice: 26,
+    title: "Product title",
   },
   {
     icon: "/home/our-products/product-four.png",
-    bestSeller: true,
+    bestSeller: false,
     description: "Est veniam anim aute exercita",
     price: 48,
     discountPrice: 56,
+    title: "Product title",
   },
 ];
 
@@ -45,30 +50,34 @@ export const OurProducts = () => {
   const [bestSellerButtonActive, setBestSellerButtonActive] = useState(true);
 
   const switchProductCards = () => {
-    switch (bestSellerButtonActive) {
-      case true:
-        return PRODUCTS.map((products) => (
-          <article className="product-card">
-            <div className="best-seller"></div>
+    const filteredProducts = PRODUCTS.filter((product) => {
+      return bestSellerButtonActive ? product.bestSeller : !product.bestSeller;
+    });
 
-            {products.icon && <img src={products.icon} alt="" />}
+    return filteredProducts.map((product) => (
+      <article className="product-card" key={product.icon}>
+        {product.icon && <img src={product.icon} alt="Product" />}
 
-            <section className="product-card-body">
-              <h3>Product title</h3>
-              <p className="product-card-description">{products.description}</p>
-            </section>
-            <section className="product-card-bottom">
-              <section className="product-card-price">
-                <p className="card-price-one">${products.price}</p>
-                <p className="card-price-two">${products.discountPrice}</p>
-              </section>
-              <button className="product-shop-button">
-                <img src="/home/our-products/shop.svg" alt="" />
-              </button>
-            </section>
-          </article>
-        ));
-    }
+        <div className={product.bestSeller ? "best-seller" : ""}></div>
+
+        <div className="product-card-body">
+          <h3>{product.title}</h3>
+
+          <p className="product-card-description">{product.description}</p>
+
+          <div className="product-card-bottom">
+            <div className="product-card-price">
+              <span className="card-price-one">${product.price}</span>
+              <span className="card-price-two">${product.discountPrice}</span>
+            </div>
+
+            <button className="product-shop-button" type="button">
+              🛒
+            </button>
+          </div>
+        </div>
+      </article>
+    ));
   };
 
   return (

@@ -37,53 +37,62 @@ export const Information = () => {
   const [buttonState, setButtonState] = useState("Benefits");
 
   const buttons = () => {
-    return informationButtons.map((buttons) => {
-      const isActive = buttons === buttonState;
-      const classSwitch = isActive ? "information-button-active" : "";
+  return informationButtons.map((button) => {
+    const isActive = button === buttonState;
+    const classSwitch = isActive ? "information-button-active" : "";
 
-      if (buttons[4]) {
-        return (
-          <>
-            <button
-              className={classSwitch}
-              onClick={() => {
-                setButtonState(buttons);
-              }}
-            >
-              {buttons}
-            </button>
-            <img src={line} alt="" />
-          </>
-        );
-      } else {
-        return (
-          <button
-            className={classSwitch}
-            onClick={() => {
-              setButtonState(buttons);
-            }}
-          >
-            {buttons}
-          </button>
-        );
-      }
-    });
-  };
+    return (
+      <button
+        key={button}
+        className={classSwitch}
+        onClick={() => {
+          setButtonState(button);
+        }}
+      >
+        {button}
+      </button>
+    );
+  });
+};
 
   const information = () => {
-    switch (buttonState) {
-      case "Benefits": return <>
-        <h2 className="information-main-heading">Benefits</h2>
-        <p>Consectetur excepteur elit ullamco incididunt voluptate tempor exercitation. Lorem commodo ullamco quis velit officia aute laboris elit sit exercitation ut esse pariatur occaecat quis</p>
-        {BENEFITS.map((data) => (
-          <article className="information-blocks">
-            <h3 className="information-headings">{data.heading}</h3>
-            <p>{data.description}</p>
-          </article>
-        ))}
-      </>
-    }
+  switch (buttonState) {
+    case "Benefits":
+      return (
+        <>
+          <div className="information-text">
+            <h2 className="information-main-heading">Benefits</h2>
+
+            <p>
+              Consectetur excepteur elit ullamco incididunt voluptate tempor
+              exercitation. Lorem commodo ullamco quis velit officia aute
+              laboris elit sit exercitation ut esse pariatur occaecat quis
+            </p>
+
+            <div className="information-blocks">
+              {BENEFITS.map((data) => (
+                <div key={data.heading}>
+                  <h3 className="information-headings">{data.heading}</h3>
+                  <p>{data.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </>
+      );
+
+    default:
+      return (
+        <div className="information-text">
+          <h2 className="information-main-heading">{buttonState}</h2>
+
+          <p>
+            Content for this section will be added later.
+          </p>
+        </div>
+      );
   }
+};
 
   return (
     <section className="information">
