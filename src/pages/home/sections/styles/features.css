@@ -1,0 +1,135 @@
+:root {
+  --features-accent-mint:     #b2ebe0;
+  --features-accent-lavender: #c9c5f5;
+  --features-accent-peach:    #f5cfc0;
+  --features-accent-pink:     #f5d5e0;
+
+  --features-text-dark: #2d3748;
+  --features-text-label: #323842;
+}
+
+.features {
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.features-head {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.features-label {
+  font-size: 14px;
+  color: var(--features-text-label);
+}
+
+.features-grid {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.feature-card {
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.feature-card:nth-child(1) {
+  grid-column: span 2;
+}
+
+.feature-card:nth-child(2) {
+  grid-column: span 4;
+}
+
+.feature-card:nth-child(3) {
+  display: flex;
+  justify-content: space-between;
+  grid-column: span 4;
+}
+
+.feature-card:nth-child(4) {
+  display: flex;
+  align-items: flex-end;
+  grid-column: span 2;
+}
+
+.feature-card:nth-child(4) .feature-card-icon {
+  margin: -32px -31px;
+}
+
+.feature-card--mint {
+  background-color: var(--features-accent-mint);
+  --link-color: #1a6b55;
+}
+
+.feature-card--lavender {
+  background-color: var(--features-accent-lavender);
+  --link-color: #4a3fa0;
+}
+
+.feature-card--peach {
+  background-color: var(--features-accent-peach);
+  --link-color: #a04a2a;
+}
+
+.feature-card--pink {
+  background-color: var(--features-accent-pink);
+  --link-color: #a03060;
+}
+
+.feature-card-content {
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+
+  max-width: 400px;
+}
+
+.features-title {
+  font-size: 52px;
+  font-weight: 700;
+}
+
+.feature-card-head {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--features-text-dark);
+}
+
+.feature-card-description {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--features-text-dark);
+}
+
+.feature-card-link {
+  display: inline-block;
+
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--link-color);
+  margin-top: auto;
+  transition: opacity 0.2s ease;
+}
+
+.feature-card-link:hover {
+  opacity: 0.75;
+}
+
+.feature-card-icon {
+  object-fit: contain;
+  opacity: 0.85;
+  flex-shrink: 0;
+}

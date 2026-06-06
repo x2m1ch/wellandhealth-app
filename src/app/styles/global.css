@@ -39,14 +39,6 @@ h3 {
   font-weight: 800;
 }
 
-.home-body {
-  gap: 60px;
-  display: flex;
-  flex-direction: column;
-
-  padding: 70px 100px;
-}
-
 .description {
   color: #323842;
   font-size: 14px;

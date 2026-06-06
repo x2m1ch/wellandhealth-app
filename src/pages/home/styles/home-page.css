@@ -1,0 +1,7 @@
+.home-body {
+  gap: 60px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 70px 100px;
+}

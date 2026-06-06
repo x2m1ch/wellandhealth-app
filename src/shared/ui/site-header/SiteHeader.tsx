@@ -1,44 +1,44 @@
 import { Link } from "react-router";
 
-import "./styles/header.css";
+import "./styles/site-header.css";
 
 interface NavLink {
-  to: string,
-  body: string
+  to: string;
+  body: string;
 }
 
 const LINKS: NavLink[] = [
   {
     to: "/",
-    body: "Home"
+    body: "Home",
   },
   {
     to: "/about",
-    body: "About us"
+    body: "About us",
   },
   {
     to: "/yoga",
-    body: "Yoga"
+    body: "Yoga",
   },
   {
     to: "/ayurvedic",
-    body: "Ayurvedic"
+    body: "Ayurvedic",
   },
   {
     to: "/helpcenter",
-    body: "Help Center"
+    body: "Help Center",
   },
   {
     to: "/contacts",
-    body: "Contact us"
+    body: "Contact us",
   },
   {
     to: "/help",
-    body: "FAQs"
-  }
-] 
+    body: "FAQs",
+  },
+];
 
-export const Header = () => {
+export const SiteHeader = () => {
   return (
     <header className="header">
       <h1>Ayuvista</h1>
@@ -46,7 +46,9 @@ export const Header = () => {
       <div className="nav-and-auth">
         <nav className="header-nav">
           {LINKS.map((link) => (
-            <Link className="links" to={link.to}>{link.body}</Link>
+            <Link className="links" to={link.to} key={link.to}>
+              {link.body}
+            </Link>
           ))}
         </nav>
         <div className="auth">

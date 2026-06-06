@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import line from "/home/information/line.svg";
 import image from "/home/information/image.png";
 
 import "./styles/information.css";
