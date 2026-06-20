@@ -53,27 +53,25 @@ export const Features = () => {
 
       <section className="features-grid">
         {FEATURES.map((feature) => (
-          <section
-            key={feature.id}
+          <article
             className={`feature-card feature-card--${feature.color}`}
+            key={feature.id}
           >
-            <section className="feature-card-content">
-              <section className="feature-card-head">
+            <div className="feature-card-content">
+              <div className="feature-card-head">
                 <h3 className="feature-card-title">{feature.title}</h3>
-                <p className="feature-card-description">
-                  {feature.description}
-                </p>
-              </section>
-              <Link to="/features" className="feature-card-link">
+                <p className="feature-card-description">{feature.description}</p>
+              </div>
+
+              <Link className="feature-card-link" to="/">
                 Try now
               </Link>
-            </section>
+            </div>
 
-            <section></section>
             {feature.icon && (
-              <img src={feature.icon} className="feature-card-icon" alt="" />
+              <img className="feature-card-icon" src={feature.icon} alt="" />
             )}
-          </section>
+          </article>
         ))}
       </section>
     </section>
