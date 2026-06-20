@@ -14,7 +14,7 @@
   --font-ui: "Inter", sans-serif;
 }
 
-.app {
+body {
   font-family: var(--font-main);
 }
 
