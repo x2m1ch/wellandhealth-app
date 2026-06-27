@@ -14,7 +14,7 @@
   --font-ui: "Inter", sans-serif;
 }
 
-.app {
+body {
   font-family: var(--font-main);
 }
 
@@ -37,6 +37,16 @@ h3 {
   font-family: var(--font-heading);
   color: var(--color-text-dark);
   font-weight: 800;
+}
+
+a {
+  color: #424955;
+  text-decoration: solid;
+  font-family: var(--font-main);
+}
+
+p {
+  font-family: var(--font-main);
 }
 
 .description {

@@ -1,3 +1,4 @@
+import { Footer } from "../../components/Footer";
 import { AboutUs } from "./sections/AboutUs";
 import { Features } from "./sections/Features";
 import { Hero } from "./sections/Hero";
@@ -16,6 +17,7 @@ export const HomePage = () => {
       <OurProducts />
       <Marquee />
       <Information />
+      <Footer />
     </main>
   );
 };
