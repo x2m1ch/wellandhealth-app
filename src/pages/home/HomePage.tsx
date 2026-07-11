@@ -1,5 +1,6 @@
 import { Footer } from "../../components/Footer";
 import { AboutUs } from "./sections/AboutUs";
+import { Blog } from "./sections/Blog";
 import { Features } from "./sections/Features";
 import { Hero } from "./sections/Hero";
 import { Information } from "./sections/Information";
@@ -17,6 +18,7 @@ export const HomePage = () => {
       <OurProducts />
       <Marquee />
       <Information />
+      <Blog />
       <Footer />
     </main>
   );

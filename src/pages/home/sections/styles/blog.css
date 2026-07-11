@@ -1,0 +1,106 @@
+:root {
+  --ladel-one: #636ae8;
+  --ladel-two: #e8618c;
+}
+
+.blog {
+  gap: 40px;
+  display: flex;
+
+  font-family: "Inter";
+}
+
+.blog-information {
+  gap: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-information-body {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-information-name {
+  font-size: 46px;
+}
+
+.blog-information-body-description {
+  font-size: 16px;
+  max-width: 320px;
+}
+
+.blog-link {
+  color: #379ae6;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.blog-cards-switch-buttons {
+  gap: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blog-cards {
+  gap: 20px;
+  display: flex;
+}
+
+.blog-card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 9px #cdcfd1;
+  width: 302px;
+}
+
+.blog-card-image {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.blog-card-body {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+}
+
+.blog-card-up-heading {
+  font-size: 14px;
+  color: #9095a0;
+}
+
+.blog-card-heading {
+  font-weight: 400;
+  font-size: 19px;
+}
+
+.blog-card-description {
+  font-size: 12px;
+  color: #171a1f;
+}
+
+.blog-ladels {
+    gap: 8px;
+    display: flex;
+}
+
+.blog-ladels-items {
+  font-size: 11px;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.ladel-one {
+  color: var(--ladel-one);
+  background-color: #F2F2FD;
+}
+
+.ladel-two {
+  color: var(--ladel-two);
+  background-color: #FDF1F5;
+}
