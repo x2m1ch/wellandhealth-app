@@ -1,6 +1,12 @@
 .hero {
   position: relative;
-  display: inline-block;
+  display: block;
+  width: 100%;
+}
+
+.hero > img {
+  display: block;
+  width: 100%;
 }
 
 .hero-body {

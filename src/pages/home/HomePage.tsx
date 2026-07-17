@@ -11,15 +11,16 @@ import "./styles/home-page.css";
 
 export const HomePage = () => {
   return (
-    <main className="home-body">
+    <>
       <Hero />
-      <AboutUs />
-      <Features />
-      <OurProducts />
-      <Marquee />
-      <Information />
-      <Blog />
-      <Footer />
-    </main>
+
+      <main className="home-body">
+        <AboutUs />
+        <Features />
+        <OurProducts />
+        <Marquee />
+        <Information />
+      </main>
+    </>
   );
 };
