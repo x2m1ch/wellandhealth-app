@@ -1,0 +1,85 @@
+.get-in-touch {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #1d2128;
+  width: 100%;
+  height: fit-content;
+  padding: 70px 100px;
+  padding-bottom: 50px;
+
+  color: white;
+}
+
+.get-in-touch-info {
+  gap: 160px;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 13px;
+}
+
+.get-in-touch-info > section {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.get-in-touch-images {
+  gap: 40px;
+  display: flex;
+}
+
+.get-in-touch-links {
+  gap: 10px;
+  display: flex;
+}
+
+.get-in-touch-inputs {
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.get-in-touch-input {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.get-in-touch-input > p {
+  position: absolute;
+  background-color: #1d2128;
+  padding: 0px 4px;
+  margin-left: 10px;
+  top: -10px;
+
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.get-in-touch-input > input {
+  width: 600px;
+  padding: 16px;
+  background-color: #1d2128;
+  border: 1px solid #dee1e6;
+  border-radius: 6px;
+  box-sizing: border-box;
+
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.get-in-touch-input > input::placeholder {
+  color: #bcc1ca;
+}
+
+.get-in-touch-submit {
+    background-color: #636AE8;
+    border-radius: 6px;
+    padding: 10px 50px;
+
+    font-weight: 600;
+}

@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { type Links } from "./Header";
+import { infoMap } from "../pages/home/HomePage";
 
 import "./styles/footer.css";
 
@@ -14,8 +15,6 @@ const images = [
   "/home/footer/linkedin.png",
   "/home/footer/youtube.png",
 ];
-
-const footerInfo = ["Privacy", "Terms", "Sitemap"];
 
 const links = {
   about: [
@@ -115,12 +114,7 @@ export const Footer = () => {
 
         <section className="footer-info">
           <p>© 2022 Brand, Inc.</p>
-          {footerInfo.map((info) => (
-            <>
-              <p>•</p>
-              <p>{info}</p>
-            </>
-          ))}
+          {infoMap("dark")}
         </section>
       </section>
     </footer>

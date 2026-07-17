@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 import { Footer } from "../../components/Footer";
 import { AboutUs } from "./sections/AboutUs";
 import { Blog } from "./sections/Blog";
@@ -9,6 +11,36 @@ import { Marquee } from "./sections/Marquee";
 import { OurProducts } from "./sections/OurProducts";
 
 import "./styles/home-page.css";
+import { GetInTouch } from "./sections/GetInTouch";
+
+interface Info {
+  name: string;
+  to: string;
+}
+
+const info: Info[] = [
+  {
+    name: "Privacy",
+    to: "/privacy",
+  },
+  {
+    name: "Terms",
+    to: "/terms",
+  },
+  {
+    name: "Sitemap",
+    to: "/sitemap",
+  },
+];
+
+export const infoMap = (textColor: "white" | "dark") => {
+  return info.map((info) => (
+    <>
+      <p>•</p>
+      <Link style={textColor == "white" ? {color: "white"}: {color: "dark"}} to={info.to}>{info.name}</Link>
+    </>
+  ));
+};
 
 export const HomePage = () => {
   return (
@@ -23,8 +55,10 @@ export const HomePage = () => {
         <Information />
         <Blog />
         <GetStarted />
-        <Footer />
       </main>
+
+      <GetInTouch />
+      <Footer />
     </>
   );
 };
