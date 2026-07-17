@@ -2,6 +2,7 @@ import { Footer } from "../../components/Footer";
 import { AboutUs } from "./sections/AboutUs";
 import { Blog } from "./sections/Blog";
 import { Features } from "./sections/Features";
+import { GetStarted } from "./sections/GetStarted";
 import { Hero } from "./sections/Hero";
 import { Information } from "./sections/Information";
 import { Marquee } from "./sections/Marquee";
@@ -20,6 +21,9 @@ export const HomePage = () => {
         <OurProducts />
         <Marquee />
         <Information />
+        <Blog />
+        <GetStarted />
+        <Footer />
       </main>
     </>
   );
