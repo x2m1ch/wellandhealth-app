@@ -1,0 +1,95 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-sections {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-headings {
+  font-size: 20px;
+  font-family: "Poppins";
+}
+
+footer > section > section > h3 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Poppins";
+}
+
+.footer-contacts {
+  font-weight: 700;
+}
+
+footer > section {
+  gap: 110px;
+  display: flex;
+}
+
+footer > section > section > a {
+  color: black;
+  font-size: 14px;
+}
+
+.subscribe-input-and-title {
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+input:focus {
+  outline: none;
+}
+
+.subscribe-input {
+  display: flex;
+  align-items: center;
+}
+
+.subscribe-input-items {
+  padding: 16px;
+}
+
+.subscribe-input-body {
+  display: flex;
+  align-items: center;
+
+  border-width: 1px;
+  border-style: solid;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+
+  padding-left: 20px;
+}
+
+.subscribe-input-text::placeholder {
+  color: black;
+}
+
+.subscribe-input-button {
+  background-color: #636ae8;
+
+  color: white;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.contacts-logos {
+  gap: 5px;
+  display: flex;
+}
+
+.contacts-logos-items {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-info {
+  gap: 10px;
+  display: flex;
+
+  font-size: 14px;
+}

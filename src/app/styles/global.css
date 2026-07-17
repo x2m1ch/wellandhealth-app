@@ -39,6 +39,16 @@ h3 {
   font-weight: 800;
 }
 
+a {
+  color: #424955;
+  text-decoration: solid;
+  font-family: var(--font-main);
+}
+
+p {
+  font-family: var(--font-main);
+}
+
 .description {
   color: #323842;
   font-size: 14px;
