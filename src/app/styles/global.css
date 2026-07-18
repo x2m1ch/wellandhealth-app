@@ -18,6 +18,14 @@ body {
   font-family: var(--font-main);
 }
 
+.app-pages {
+  gap: 60px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 70px 100px;
+}
+
 h1 {
   font-family: var(--font-main);
   color: var(--color-title);

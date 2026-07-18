@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
 import { Footer } from "../../components/Footer";
-import { AboutUs } from "./sections/AboutUs";
+import { AboutUs } from "../../components/AboutUs";
 import { Blog } from "./sections/Blog";
 import { Features } from "./sections/Features";
 import { GetStarted } from "./sections/GetStarted";
@@ -10,7 +10,6 @@ import { Information } from "./sections/Information";
 import { Marquee } from "./sections/Marquee";
 import { OurProducts } from "./sections/OurProducts";
 
-import "./styles/home-page.css";
 import { GetInTouch } from "./sections/GetInTouch";
 
 interface Info {
@@ -47,7 +46,7 @@ export const HomePage = () => {
     <>
       <Hero />
 
-      <main className="home-body">
+      <main className="app-pages">
         <AboutUs />
         <Features />
         <OurProducts />

@@ -10,10 +10,10 @@ interface Column {
 }
 
 const images = [
-  "/home/footer/twitter.png",
-  "/home/footer/facebook.png",
-  "/home/footer/linkedin.png",
-  "/home/footer/youtube.png",
+  "/components/footer/twitter.png",
+  "/components/footer/facebook.png",
+  "/components/footer/linkedin.png",
+  "/components/footer/youtube.png",
 ];
 
 const links = {
@@ -93,7 +93,7 @@ export const Footer = () => {
           <p>Duis ea tempor commodo amet reprehende</p>
           <div className="subscribe-input">
             <div className="subscribe-input-body">
-              <img src="/home/footer/mail.svg" alt="" />
+              <img src="/components/footer/mail.svg" alt="" />
               <input
                 className="subscribe-input-text subscribe-input-items"
                 placeholder="Input your email"

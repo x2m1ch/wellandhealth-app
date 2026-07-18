@@ -1,6 +1,7 @@
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 
 import { HomePage } from "../pages/home";
+import { AboutUsPage } from "../pages/about-us/AboutUsPage";
 import { SiteHeader } from "../shared/ui/site-header";
 
 import "./styles/global.css";
@@ -21,6 +22,7 @@ export const App = () => {
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutUsPage/>} />
         </Route>
       </Routes>
     </BrowserRouter>

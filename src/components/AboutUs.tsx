@@ -1,5 +1,5 @@
-import line from "/home/about-us/line.svg";
-import eiusmod from "/home/about-us/eiusmod.png";
+import line from "/components/about-us/line.svg";
+import eiusmod from "/components/about-us/eiusmod.png";
 
 import "./styles/about-us.css";
 
