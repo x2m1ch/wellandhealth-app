@@ -1,0 +1,26 @@
+.video-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 520px;
+}
+
+.video-section > img {
+    position: absolute;
+
+    border-radius: 20px;
+}
+
+.video-section > button {
+  gap: 10px;
+  align-items: center;
+  display: flex;
+
+  position: absolute;
+  background-color: #636ae8;
+  border-radius: 26px;
+  padding: 10px 15px;
+
+  color: white;
+}

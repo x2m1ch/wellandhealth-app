@@ -1,6 +1,7 @@
 import { AboutUs } from "../../components/AboutUs";
 import { Founders } from "./sections/Founders";
 import { OurHistory } from "./sections/OurHistory";
+import { Video } from "./sections/Video";
 
 export const AboutUsPage = () => {
   return (
@@ -9,6 +10,7 @@ export const AboutUsPage = () => {
         <AboutUs />
         <Founders />
         <OurHistory />
+        <Video />
       </section>
     </>
   );
