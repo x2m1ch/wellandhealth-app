@@ -1,4 +1,4 @@
-import { infoMap } from "../HomePage";
+import { infoMap } from "../pages/home/HomePage";
 
 import "./styles/get-in-touch.css";
 
@@ -23,10 +23,10 @@ const INPUTS: Input[] = [
 ];
 
 const images = [
-  "/home/get-in-touch/instagram.svg",
-  "/home/get-in-touch/dribble.svg",
-  "/home/get-in-touch/linkedin.svg",
-  "/home/get-in-touch/envelope.svg",
+  "/components/get-in-touch/instagram.svg",
+  "/components/get-in-touch/dribble.svg",
+  "/components/get-in-touch/linkedin.svg",
+  "/components/get-in-touch/envelope.svg",
 ];
 
 export const GetInTouch = () => {

@@ -4,13 +4,12 @@ import { Footer } from "../../components/Footer";
 import { AboutUs } from "../../components/AboutUs";
 import { Blog } from "./sections/Blog";
 import { Features } from "./sections/Features";
-import { GetStarted } from "./sections/GetStarted";
+import { GetStarted } from "../../components/GetStarted";
 import { Hero } from "./sections/Hero";
 import { Information } from "./sections/Information";
 import { Marquee } from "./sections/Marquee";
 import { OurProducts } from "./sections/OurProducts";
-
-import { GetInTouch } from "./sections/GetInTouch";
+import { GetInTouch } from "../../components/GetInTouch";
 
 interface Info {
   name: string;

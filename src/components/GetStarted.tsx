@@ -1,4 +1,4 @@
-import Arrow from "/home/get-started/arrow.svg";
+import Arrow from "/components/get-started/arrow.svg";
 
 import "./styles/get-started.css";
 import { Link } from "react-router";
