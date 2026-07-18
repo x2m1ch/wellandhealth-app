@@ -25,6 +25,10 @@ const LINKS: NavLink[] = [
     body: "Ayurvedic",
   },
   {
+    to: "/pricing",
+    body: "Pricing"
+  },
+  {
     to: "/helpcenter",
     body: "Help Center",
   },
