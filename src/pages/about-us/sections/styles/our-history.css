@@ -1,0 +1,69 @@
+.our-history {
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.our-history::before {
+  content: url(/about-us/our-history/decor.svg);
+  position: absolute;
+  margin-left: 1250px;
+}
+
+.our-history::after {
+  content: url(/about-us/our-history/decor2.svg);
+  position: absolute;
+  margin-right: 1250px;
+  margin-top: 500px;
+}
+
+.our-history-head {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.our-history-body {
+  display: flex;
+
+  margin-left: 200px;
+}
+
+.our-history-body > section {
+  gap: 50px;
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 20px;
+}
+
+.our-history-body > img {
+  position: absolute;
+  margin-left: 400px;
+}
+
+.date-action {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 300px;
+}
+
+.date-action > h3 {
+  color: #878ced;
+  font-size: 40px;
+}
+
+.date-action > p {
+  max-width: 400px;
+
+  color: #323842;
+}
+
+.date-action:nth-child(2) {
+  margin-left: 500px;
+  min-width: 300px;
+}
