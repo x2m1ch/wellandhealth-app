@@ -45,29 +45,6 @@
     flex-direction: column;
 }
 
-.flexible-plans-card-head {
-    gap: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.flexible-plans-card-head > h3 {
-    font-family: "Inter";
-    font-weight: 400;
-}
-
-.flexible-plans-card-price {
-    gap: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.flexible-plans-card-price > span {
-    font-weight: 700;
-    font-size: 48px;
-}
-
 .flexible-plans-card-advantages {
     gap: 10px;
     display: flex;
@@ -77,19 +54,4 @@
 .flexible-plans-card-advantages > div {
     gap: 10px;
     display: flex;
-}
-
-.flexible-plans-card > button {
-    gap: 7px;
-    display: flex;
-    justify-content: center;
-
-    background-color: white;
-    padding: 10px 70px;
-    border-radius: 16px;
-    border-color: #636AE8;
-    border-width: 1px;
-    border-style: solid;
-
-    color: #636AE8;
 }

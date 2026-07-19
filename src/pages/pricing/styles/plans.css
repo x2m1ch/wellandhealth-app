@@ -1,0 +1,59 @@
+.plans-heading {
+  font-family: "Inter";
+  font-weight: 400;
+}
+
+.plans-card-head {
+  gap: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.plans-card-price {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.plans-card-price > span {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.plans-card-button {
+  gap: 7px;
+  display: flex;
+  justify-content: center;
+
+  background-color: white;
+  padding: 10px 70px;
+  border-radius: 16px;
+  border-color: #636ae8;
+  border-width: 1px;
+  border-style: solid;
+
+  color: #636ae8;
+}
+
+.plans-card-button > p {
+    min-width: fit-content;
+}
+
+.plans-card-button > img {
+    width: 20px;
+}
+
+.plans-card-button-professional {
+  display: flex;
+  justify-content: center;
+
+  background-color: #636ae8;
+  padding: 10px 70px;
+  border-radius: 16px;
+  border-color: #636ae8;
+  border-width: 1px;
+  border-style: solid;
+
+  color: white;
+}

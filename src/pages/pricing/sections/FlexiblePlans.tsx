@@ -1,57 +1,10 @@
-import check from "/pricing/flexible-plans/check.svg";
-import paper from "/pricing/flexible-plans/paper.svg";
+import { PLANS, type PlanCardType } from "../plans";
+
+import check from "/pricing/plans/check.svg";
+import paper from "/pricing/plans/paper.svg";
 
 import "./styles/flexible-plans.css";
-
-type PlanCardType = "Starter" | "Professional" | "Organization";
-
-interface PlanCard {
-  type: PlanCardType;
-  price: number;
-  advantages: string[];
-}
-
-const advantages = {
-  starter: [
-    "Up to 1 users",
-    "Analytics platform",
-    "30-day free trial",
-    "Team libraries",
-  ],
-  professional: [
-    "Up to 20 users",
-    "Smart analytics platform",
-    "30-day free trial",
-    "Team libraries",
-    "Chat support 24/7",
-  ],
-  organization: [
-    "Unlimited users",
-    "System analytics",
-    "30-day free trial",
-    "Team libraries",
-    "Chat support 24/7",
-    "Advanced support services",
-  ],
-};
-
-const CARDS: PlanCard[] = [
-  {
-    type: "Starter",
-    price: 9,
-    advantages: advantages.starter,
-  },
-  {
-    type: "Professional",
-    price: 12,
-    advantages: advantages.professional,
-  },
-  {
-    type: "Organization",
-    price: 20,
-    advantages: advantages.organization,
-  },
-];
+import "../styles/plans.css";
 
 const switchCardDescriptionByType = (type: PlanCardType) => {
   switch (type) {
@@ -59,7 +12,7 @@ const switchCardDescriptionByType = (type: PlanCardType) => {
       return "Perfect for personal use";
     case "Professional":
       return "Perfect for small teams";
-    case "Organization":
+    default:
       return "Perfect for organizations";
   }
 };
@@ -82,17 +35,16 @@ const switchTextColorByType = (type: PlanCardType) => {
   }
 };
 
-const switchButtonByType = (type: PlanCardType) => {
-  switch (type) {
-    case "Organization":
-      return (
-        <button>
-          <img src={paper} />
-          Contact Sale
-        </button>
-      );
-    default:
-      return <button>Get Started</button>;
+const viewAdvantages = (advantages: string[] | undefined) => {
+  if (advantages) {
+    return advantages.map((advantage) => (
+      <div>
+        <img src={check} alt="" />
+        <p>{advantage}</p>
+      </div>
+    ));
+  } else {
+    return;
   }
 };
 
@@ -107,32 +59,39 @@ export const FlexiblePlans = () => {
         </p>
       </section>
       <section className="flexible-plans-cards">
-        {CARDS.map((card) => (
+        {PLANS.map((plan) => (
           <article
             className="flexible-plans-card"
-            style={switchColorByType(card.type)}
+            style={switchColorByType(plan.type)}
           >
             <section>
-              <section className="flexible-plans-card-head">
-                <h3 style={switchColorByType(card.type)}>{card.type}</h3>
-                <div className="flexible-plans-card-price">
-                  <span>${card.price}</span>
-                  <p style={switchTextColorByType(card.type)}>/month</p>
+              <section className="plans-card-head">
+                <h3
+                  className="plans-heading"
+                  style={switchColorByType(plan.type)}
+                >
+                  {plan.type}
+                </h3>
+                <div className="plans-card-price">
+                  <span>${plan.price}</span>
+                  <p style={switchTextColorByType(plan.type)}>/month</p>
                 </div>
-                <p style={switchTextColorByType(card.type)}>
-                  {switchCardDescriptionByType(card.type)}
+                <p style={switchTextColorByType(plan.type)}>
+                  {switchCardDescriptionByType(plan.type)}
                 </p>
               </section>
               <section className="flexible-plans-card-advantages">
-                {card.advantages.map((advantages) => (
-                  <div>
-                    <img src={check} alt="" />
-                    <p>{advantages}</p>
-                  </div>
-                ))}
+                {viewAdvantages(plan.advantages)}
               </section>
             </section>
-            {switchButtonByType(card.type)}
+            {plan.type == "Organization" ? (
+              <button className="plans-card-button">
+                <img src={paper} />
+                Contact Sale
+              </button>
+            ) : (
+              <button className="plans-card-button">Get Started</button>
+            )}
           </article>
         ))}
       </section>

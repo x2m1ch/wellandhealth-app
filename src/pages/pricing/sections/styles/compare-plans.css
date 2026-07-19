@@ -1,0 +1,54 @@
+.compare-plans {
+    gap: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-plans-head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.compare-plans-head > h2 {
+    max-width: 300px;
+}
+
+.compare-plans-info {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-plans-info-rows {
+    gap: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: #DEE1E6 1px solid;
+    padding-bottom: 30px;
+}
+
+.compare-plans-info-rows > section {
+    display: flex;
+    flex-direction: column;
+}
+
+.compare-plans-info-rows > section > h3 {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.compare-plans-info-rows > section > p {
+    color: #9095A0;
+    font-size: 14px;
+    max-width: 370px;
+}
+
+.compare-checks {
+    gap: 285px;
+    display: flex;
+
+    padding-right: 105px;
+}
