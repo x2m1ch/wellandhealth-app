@@ -1,0 +1,57 @@
+.flexible-plans {
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flexible-plans-head {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    color: #323842;
+}
+
+.flexible-plans-head > p {
+    max-width: 650px;
+    text-align: center;
+}
+
+.flexible-plans-cards {
+    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+
+    font-family: "Inter";
+    font-weight: 400;
+}
+
+.flexible-plans-card {
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.flexible-plans-card > section {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flexible-plans-card-advantages {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flexible-plans-card-advantages > div {
+    gap: 10px;
+    display: flex;
+}

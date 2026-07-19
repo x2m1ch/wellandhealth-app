@@ -3,6 +3,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { HomePage } from "../pages/home";
 import { AboutUsPage } from "../pages/about-us/AboutUsPage";
 import { SiteHeader } from "../shared/ui/site-header";
+import { PricingPage } from "../pages/pricing/PricingPage";
 
 import "./styles/global.css";
 import "./styles/reset.css";
@@ -23,6 +24,7 @@ export const App = () => {
         <Route element={<AppLayout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutUsPage/>} />
+          <Route path="/pricing" element={<PricingPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
