@@ -1,4 +1,9 @@
-import { type PlanCardType, PLANS, advantages } from "../plans";
+import {
+  type PlanCardType,
+  PLANS,
+  advantagesChecks,
+  namesRows,
+} from "../plans";
 
 import "./styles/compare-plans.css";
 import "../styles/plans.css";
@@ -6,27 +11,33 @@ import "../styles/plans.css";
 import paper from "/pricing/plans/paper.svg";
 import cheak from "/pricing/plans/check2.svg";
 
-const namesRows = [
-  "30-day free trial",
-  "Team libraries",
-  "Smart analytics platform",
-  "Chat support 24/7",
-  "System analytics",
-  "Advanced support services",
-];
+const checksView = (nameRow: string) => {
+  const currentAdvantage = advantagesChecks.find((adv) => adv.name == nameRow);
 
-const checksView = () => {
   return (
     <div className="compare-checks">
-      <article className="compare-check">
-        <img src={cheak} alt="" />
-      </article>
-      <article className="compare-check">
-        <img src={cheak} alt="" />
-      </article>
-      <article className="compare-check">
-        <img src={cheak} alt="" />
-      </article>
+      {PLANS.map((plan) => {
+        const planKey = plan.type.toLowerCase() as
+          | "starter"
+          | "professional"
+          | "organization";
+
+        const hasAdvantage = currentAdvantage
+          ? currentAdvantage[planKey]
+          : false;
+
+        return (
+          <>
+            <div className="compare-checks">
+              {hasAdvantage ? (
+                <img src={cheak} className="compare-icon" />
+              ) : (
+                <span style={{ paddingRight: 6 }}>-</span>
+              )}
+            </div>
+          </>
+        );
+      })}
     </div>
   );
 };
@@ -79,7 +90,7 @@ export const ComparePlans = () => {
                         incididunt irure Ipsum labore
                       </p>
                     </section>
-                    {checksView()}
+                    {checksView(row)}
                   </article>
                 </>
               );
@@ -89,7 +100,7 @@ export const ComparePlans = () => {
                   <section>
                     <h3>{row}</h3>
                   </section>
-                  {checksView()}
+                  {checksView(row)}
                 </article>
               );
           }

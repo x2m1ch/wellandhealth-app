@@ -43,12 +43,17 @@
 .compare-plans-info-rows > section > p {
     color: #9095A0;
     font-size: 14px;
-    max-width: 370px;
+    max-width: 360px;
 }
 
 .compare-checks {
-    gap: 285px;
+    gap: 230px;
     display: flex;
 
-    padding-right: 105px;
+    padding-right: 60px;
+}
+
+.compare-icon {
+    width: 24px;
+    height: 24px;
 }

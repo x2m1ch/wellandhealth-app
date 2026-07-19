@@ -6,6 +6,13 @@ export interface PlanCard {
   advantages?: string[];
 }
 
+interface AdvantagesChecks {
+  name: string;
+  starter: boolean;
+  professional: boolean;
+  organization: boolean;
+}
+
 export const advantages = {
   starter: [
     "Up to 1 users",
@@ -29,6 +36,54 @@ export const advantages = {
     "Advanced support services",
   ],
 };
+
+export const namesRows = [
+  "30-day free trial",
+  "Team libraries",
+  "Smart analytics platform",
+  "Chat support 24/7",
+  "System analytics",
+  "Advanced support services",
+];
+
+export const advantagesChecks: AdvantagesChecks[] = [
+  {
+    name: "30-day free trial",
+    starter: true,
+    professional: true,
+    organization: true,
+  },
+  {
+    name: "Team libraries",
+    starter: true,
+    professional: true,
+    organization: true,
+  },
+  {
+    name: "Smart analytics platform",
+    starter: false,
+    professional: true,
+    organization: true,
+  },
+  {
+    name: "Chat support 24/7",
+    starter: false,
+    professional: true,
+    organization: true,
+  },
+  {
+    name: "System analytics",
+    starter: false,
+    professional: false,
+    organization: true,
+  },
+  {
+    name: "Advanced support services",
+    starter: false,
+    professional: false,
+    organization: true,
+  },
+];
 
 export const PLANS: PlanCard[] = [
   {
