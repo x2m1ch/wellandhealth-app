@@ -24,8 +24,9 @@
 }
 
 .get-started-area-image {
+  position: absolute;
+  margin: 130px 0px 0px 400px;
   width: 70px;
-  margin-top: 50px;
 }
 
 .get-started-area-button {
