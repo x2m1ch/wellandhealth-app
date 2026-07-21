@@ -23,6 +23,10 @@
   font-weight: 600;
 }
 
+.links:hover {
+  color: #656970;
+}
+
 .auth {
   gap: 20px;
   display: flex;
@@ -38,6 +42,10 @@
   color: #636ae8;
 }
 
+.login:hover {
+  color: #7a7edb;
+}
+
 .get-free {
   background-color: #636ae8;
   border-radius: 16px;
@@ -45,4 +53,8 @@
   height: 36px;
 
   color: white;
+}
+
+.get-free:hover {
+  background-color: #7076e2;
 }

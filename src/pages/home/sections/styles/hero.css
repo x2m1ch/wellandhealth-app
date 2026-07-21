@@ -29,6 +29,10 @@
   line-height: 1;
 }
 
+.hero-heading > div {
+  font-size: 50px;
+}
+
 .button-auth-hero {
   background-color: white;
   padding: 15px 80px;
@@ -38,4 +42,9 @@
   font-family: "Inter";
   font-weight: 800;
   font-size: 20px;
+}
+.button-auth-hero:hover {
+  background-color: #636ae8;
+
+  color: white;
 }

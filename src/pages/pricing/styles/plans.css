@@ -36,6 +36,12 @@
   color: #636ae8;
 }
 
+.plans-card-button:hover {
+  background-color: #636ae8;
+
+  color: white;
+}
+
 .plans-card-button > p {
     min-width: fit-content;
 }

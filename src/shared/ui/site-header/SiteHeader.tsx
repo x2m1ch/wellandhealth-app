@@ -2,12 +2,12 @@ import { Link } from "react-router";
 
 import "./styles/site-header.css";
 
-interface NavLink {
+export interface Links {
   to: string;
   body: string;
 }
 
-const LINKS: NavLink[] = [
+const LINKS: Links[] = [
   {
     to: "/",
     body: "Home",
@@ -45,7 +45,7 @@ const LINKS: NavLink[] = [
 export const SiteHeader = () => {
   return (
     <header className="header">
-      <h1>Ayuvista</h1>
+      <Link to="/"><h1>Ayuvista</h1></Link>
 
       <div className="nav-and-auth">
         <nav className="header-nav">

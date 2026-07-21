@@ -8,11 +8,13 @@ export const AboutUs = () => {
     <section className="about-us">
       <section className="about-us-body">
         <section className="about-us-head">
-          <p className="description">
-            Dolore dolore voluptate aliqua ut mi
-          </p>
+          <p className="description">Dolore dolore voluptate aliqua ut mi</p>
           <h2>About Us</h2>
-          <img src={line} alt="" />
+          <img
+            style={{ userSelect: "none", pointerEvents: "none" }}
+            src={line}
+            alt=""
+          />
         </section>
         <p className="about-us-text">
           Pranovista is a holistic wellness company dedicated to promoting a
@@ -25,7 +27,11 @@ export const AboutUs = () => {
         </p>
         <button className="button-learn-more">Learn more</button>
       </section>
-      <img src={eiusmod} alt="" />
+      <img
+        style={{ userSelect: "none", pointerEvents: "none" }}
+        src={eiusmod}
+        alt=""
+      />
     </section>
   );
 };

@@ -79,6 +79,10 @@ input:focus {
   border-bottom-right-radius: 15px;
 }
 
+.subscribe-input-button:hover {
+  background-color: #7175e0;
+}
+
 .contacts-logos {
   gap: 5px;
   display: flex;

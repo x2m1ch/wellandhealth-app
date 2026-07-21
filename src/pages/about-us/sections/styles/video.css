@@ -7,7 +7,7 @@
 }
 
 .video-section > img {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 .video-section > button {
@@ -19,6 +19,12 @@
   background-color: #636ae8;
   border-radius: 26px;
   padding: 10px 15px;
+
+  color: white;
+}
+
+.video-section > button:hover {
+  background-color: #676dd6;
 
   color: white;
 }

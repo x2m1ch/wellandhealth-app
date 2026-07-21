@@ -1,3 +1,4 @@
+import { buttonHover } from "../PricingPage";
 import {
   type PlanCardType,
   PLANS,
@@ -8,7 +9,6 @@ import {
 import "./styles/compare-plans.css";
 import "../styles/plans.css";
 
-import paper from "/pricing/plans/paper.svg";
 import cheak from "/pricing/plans/check2.svg";
 
 const checksView = (nameRow: string) => {
@@ -31,9 +31,7 @@ const checksView = (nameRow: string) => {
             <div className="compare-checks">
               {hasAdvantage ? (
                 <img src={cheak} className="compare-icon" />
-              ) : (
-                <span style={{ paddingRight: 6 }}>-</span>
-              )}
+              ) : undefined}
             </div>
           </>
         );
@@ -45,16 +43,9 @@ const checksView = (nameRow: string) => {
 const switchButtons = (type: PlanCardType) => {
   switch (type) {
     case "Organization":
-      return (
-        <button className="plans-card-button">
-          <img src={paper} alt="" />
-          <p>Contact Sale</p>
-        </button>
-      );
+      return buttonHover();
     default:
-      return (
-        <button className="plans-card-button" style={type == "Professional" ? {backgroundColor: "#636ae8", color: "white"}: undefined}>Get Started</button>
-      );
+      return <button className="plans-card-button">Get Started</button>;
   }
 };
 

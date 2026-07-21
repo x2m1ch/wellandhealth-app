@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { type Links } from "./Header";
+import { type Links } from "../shared/ui/site-header/SiteHeader";
 import { infoMap } from "../pages/home/HomePage";
 
 import "./styles/footer.css";
@@ -62,18 +62,18 @@ const columns: Column[] = [
   },
 ];
 
-const renderColumns = () => {
-  return columns.map((columns) => (
-    <section className="footer-sections">
-      <h2 className="footer-headings">{columns.heading}</h2>
-      {columns.links.map((link) => (
-        <Link to={link.to}>{link.body}</Link>
-      ))}
-    </section>
-  ));
-};
-
 export const Footer = () => {
+  const renderColumns = () => {
+    return columns.map((columns) => (
+      <section className="footer-sections">
+        <h2 className="footer-headings">{columns.heading}</h2>
+        {columns.links.map((link) => (
+          <Link to={link.to}>{link.body}</Link>
+        ))}
+      </section>
+    ));
+  };
+
   return (
     <footer>
       <section>

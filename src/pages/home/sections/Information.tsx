@@ -41,7 +41,7 @@ export const Information = () => {
   const buttons = () => {
     return informationButtons.map((button) => {
       const isActive = button === buttonState;
-      const classSwitch = isActive ? "information-button-active" : "";
+      const classSwitch = isActive ? "information-button-active" : undefined;
 
       return (
         <button
