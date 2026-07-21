@@ -1,4 +1,4 @@
-.ask {
+.ask-hero {
     gap: 30px;
     display: flex;
     align-items: center;
@@ -6,11 +6,11 @@
     justify-content: center;   
 }
 
-.ask > img {
+.ask-hero > img {
     width: 100%;
 }
 
-.ask-body {
+.ask-hero-body {
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -18,12 +18,12 @@
     position: absolute;
 }
 
-.ask-body > h2 {
+.ask-hero-body > h2 {
     max-width: 500px;
     text-align: center;
 }
 
-.ask-body > div {
+.ask-hero-body > div {
     gap: 10px;
     display: flex;
 
@@ -35,6 +35,6 @@
     color: #BCC1CA;
 }
 
-.ask-body > div > input {
+.ask-hero-body > div > input {
     width: 400px;
 }
