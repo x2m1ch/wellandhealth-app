@@ -4,7 +4,7 @@ import { Footer } from "../../components/Footer";
 import { AboutUs } from "../../components/AboutUs";
 import { Blog } from "./sections/Blog";
 import { Features } from "./sections/Features";
-import { GetStarted } from "../../components/GetStarted";
+import { Get } from "../../components/Get";
 import { Hero } from "./sections/Hero";
 import { Information } from "./sections/Information";
 import { Marquee } from "./sections/Marquee";
@@ -35,7 +35,12 @@ export const infoMap = (textColor: "white" | "dark") => {
   return info.map((info) => (
     <>
       <p>•</p>
-      <Link style={textColor == "white" ? {color: "white"}: {color: "dark"}} to={info.to}>{info.name}</Link>
+      <Link
+        style={textColor == "white" ? { color: "white" } : { color: "dark" }}
+        to={info.to}
+      >
+        {info.name}
+      </Link>
     </>
   ));
 };
@@ -52,7 +57,7 @@ export const HomePage = () => {
         <Marquee />
         <Information />
         <Blog />
-        <GetStarted />
+        <Get heading="Getting started"/>
       </main>
 
       <GetInTouch />

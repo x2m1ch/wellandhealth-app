@@ -1,7 +1,7 @@
 import { AboutUs } from "../../components/AboutUs";
 import { Footer } from "../../components/Footer";
 import { GetInTouch } from "../../components/GetInTouch";
-import { GetStarted } from "../../components/GetStarted";
+import { Get } from "../../components/Get";
 import { Founders } from "./sections/Founders";
 import { OurHistory } from "./sections/OurHistory";
 import { Video } from "./sections/Video";
@@ -14,7 +14,7 @@ export const AboutUsPage = () => {
         <Founders />
         <OurHistory />
         <Video />
-        <GetStarted />
+        <Get heading="Getting started"/>
       </section>
 
       <GetInTouch />

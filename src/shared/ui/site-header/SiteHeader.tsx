@@ -37,7 +37,7 @@ const LINKS: NavLink[] = [
     body: "Contact us",
   },
   {
-    to: "/help",
+    to: "/faq",
     body: "FAQs",
   },
 ];

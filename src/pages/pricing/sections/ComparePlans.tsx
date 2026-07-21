@@ -44,8 +44,6 @@ const checksView = (nameRow: string) => {
 
 const switchButtons = (type: PlanCardType) => {
   switch (type) {
-    case "Starter":
-      return <button className="plans-card-button">Get Started</button>;
     case "Organization":
       return (
         <button className="plans-card-button">
@@ -55,7 +53,7 @@ const switchButtons = (type: PlanCardType) => {
       );
     default:
       return (
-        <button className="plans-card-button-professional">Get Started</button>
+        <button className="plans-card-button" style={type == "Professional" ? {backgroundColor: "#636ae8", color: "white"}: undefined}>Get Started</button>
       );
   }
 };

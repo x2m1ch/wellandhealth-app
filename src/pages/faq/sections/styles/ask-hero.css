@@ -1,0 +1,40 @@
+.ask-hero {
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;   
+}
+
+.ask-hero > img {
+    width: 100%;
+}
+
+.ask-hero-body {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+}
+
+.ask-hero-body > h2 {
+    max-width: 500px;
+    text-align: center;
+}
+
+.ask-hero-body > div {
+    gap: 10px;
+    display: flex;
+
+    background-color: #757BEA;
+    border-radius: 16px;
+    border: #4850E4 1px solid;
+    padding: 10px 20px 10px 20px;
+
+    color: #BCC1CA;
+}
+
+.ask-hero-body > div > input {
+    width: 400px;
+}
