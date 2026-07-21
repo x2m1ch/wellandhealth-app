@@ -53,6 +53,7 @@ export const Asks = () => {
               <div>
                 <h3>{values.heading}</h3>
                 <img
+                  style={{ userSelect: "none" }}
                   onClick={() => {
                     setStateButtonSwitchDescription(values.heading);
                   }}

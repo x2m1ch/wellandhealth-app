@@ -69,7 +69,7 @@ export const Features = () => {
             </div>
 
             {feature.icon && (
-              <img className="feature-card-icon" src={feature.icon} alt="" />
+              <img style={{userSelect: "none", pointerEvents: "none"}} className="feature-card-icon" src={feature.icon} alt="" />
             )}
           </article>
         ))}

@@ -10,7 +10,7 @@
 }
 
 .asks-button {
-    background-color: #FFFFFF;
+    background-color: white;
     border: #9095A0 1px solid;
     border-radius: 26px;
     padding: 10px 40px;
@@ -19,9 +19,15 @@
     font-weight: 600;
 }
 
+.asks-button:hover {
+    border-color: #636AE8;
+
+    color: #636AE8;
+}
+
 .asks-button-active {
     background-color: #636AE8;
-    border: #9095A0 1px solid;
+    border: #fafcff 1px solid;
     border-radius: 26px;
     padding: 10px 40px;
 

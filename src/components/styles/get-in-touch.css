@@ -77,9 +77,13 @@
 }
 
 .get-in-touch-submit {
-    background-color: #636AE8;
-    border-radius: 6px;
-    padding: 10px 50px;
+  background-color: #636ae8;
+  border-radius: 6px;
+  padding: 10px 50px;
 
-    font-weight: 600;
+  font-weight: 600;
+}
+
+.get-in-touch-submit:hover {
+  background-color: #7076e2;
 }

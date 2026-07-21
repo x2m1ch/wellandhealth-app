@@ -32,3 +32,9 @@
   font-family: "Inter";
   font-weight: 800;
 }
+
+.button-learn-more:hover {
+  background-color: #636ae8;
+
+  color: white;
+}

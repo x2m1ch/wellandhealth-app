@@ -39,3 +39,7 @@
   color: white;
   font-weight: 800;
 }
+
+.get-started-area-button:hover {
+  background-color: #6fbc78;
+}

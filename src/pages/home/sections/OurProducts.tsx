@@ -8,7 +8,7 @@ interface Product {
   description: string;
   price: number;
   discountPrice: number;
-  title: string,
+  title: string;
 }
 
 const PRODUCTS: Product[] = [
@@ -45,6 +45,8 @@ const PRODUCTS: Product[] = [
     title: "Product title",
   },
 ];
+
+const buttons = ["Best-sellers", "New products"];
 
 export const OurProducts = () => {
   const [bestSellerButtonActive, setBestSellerButtonActive] = useState(true);
@@ -86,17 +88,17 @@ export const OurProducts = () => {
         <h2>Our products</h2>
         <section className="our-products-buttons">
           <button
-            className={bestSellerButtonActive ? "product-card-active" : ""}
+            className={bestSellerButtonActive ? "product-card-active" : undefined}
             onClick={() => {
-              setBestSellerButtonActive(true);
+              setBestSellerButtonActive(!bestSellerButtonActive);
             }}
           >
             Best-sellers
           </button>
           <button
-            className={bestSellerButtonActive ? "" : "product-card-active"}
+            className={bestSellerButtonActive ? undefined : "product-card-active"}
             onClick={() => {
-              setBestSellerButtonActive(false);
+              setBestSellerButtonActive(!bestSellerButtonActive);
             }}
           >
             New products
