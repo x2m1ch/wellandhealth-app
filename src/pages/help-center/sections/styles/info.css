@@ -1,0 +1,32 @@
+.help-info {
+    gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.help-info-block {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.help-info-block:nth-child(5) > img {
+    width: 80px;
+    height: 80px;
+}
+
+.help-info-block > div {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.help-info-block > div > h2 {
+    font-size: 24px;
+
+    text-align: center;
+}

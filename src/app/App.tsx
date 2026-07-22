@@ -5,6 +5,7 @@ import { AboutUsPage } from "../pages/about-us/AboutUsPage";
 import { SiteHeader } from "../shared/ui/site-header";
 import { PricingPage } from "../pages/pricing/PricingPage";
 import { FaqPage } from "../pages/faq/FaqPage";
+import { HelpCenterPage } from "../pages/help-center/HelpCenterPage";
 
 import "./styles/global.css";
 import "./styles/reset.css";
@@ -27,6 +28,7 @@ export const App = () => {
           <Route path="/about" element={<AboutUsPage/>} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/faq" element={<FaqPage />} />
+          <Route path="/helpcenter" element={<HelpCenterPage />}/>
         </Route>
       </Routes>
     </BrowserRouter>
