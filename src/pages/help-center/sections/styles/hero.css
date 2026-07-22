@@ -1,0 +1,22 @@
+.help-hero > img {
+    width: 100%;
+}
+
+.help-hero > section {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+
+.help-hero-input {
+    gap: 10px;
+    display: flex;
+
+    border: #636AE8 1px solid;
+    border-radius: 16px;
+    padding: 10px 70px 10px 20px;
+}
