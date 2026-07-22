@@ -52,7 +52,11 @@ export const Info = () => {
       <section className="help-info">
         {BLOCKS.map((block) => (
           <article className="help-info-block">
-            <img src={block.icon} alt="" />
+            <img
+              style={{ userSelect: "none", pointerEvents: "none" }}
+              src={block.icon}
+              alt=""
+            />
             <div>
               <h2>{block.heading}</h2>
               <p>{block.description}</p>
