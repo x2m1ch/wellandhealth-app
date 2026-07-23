@@ -47,6 +47,10 @@
 }
 
 .get-free {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background-color: #636ae8;
   border-radius: 16px;
   width: 147px;

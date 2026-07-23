@@ -30,7 +30,7 @@ export const Blog = () => {
           <p className="blog-information-body-description">
             Laborum dolore aute et incididunt commodo consectetur eiusmod magna.
           </p>
-          <Link className="blog-link" to="/blog">
+          <Link className="blog-link" to="/">
             View more
           </Link>
         </section>

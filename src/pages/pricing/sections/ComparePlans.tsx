@@ -1,53 +1,43 @@
 import { buttonHover } from "../PricingPage";
-import {
-  type PlanCardType,
-  PLANS,
-  advantagesChecks,
-  namesRows,
-} from "../plans";
+import { PLANS, advantagesChecks, namesRows } from "../plans";
 
 import "./styles/compare-plans.css";
 import "../styles/plans.css";
 
 import cheak from "/pricing/plans/check2.svg";
 
-const checksView = (nameRow: string) => {
-  const currentAdvantage = advantagesChecks.find((adv) => adv.name == nameRow);
-
-  return (
-    <div className="compare-checks">
-      {PLANS.map((plan) => {
-        const planKey = plan.type.toLowerCase() as
-          | "starter"
-          | "professional"
-          | "organization";
-
-        const hasAdvantage = currentAdvantage
-          ? currentAdvantage[planKey]
-          : false;
-
-        return (
-          <>
-            <div className="compare-checks">
-              {hasAdvantage ? (
-                <img src={cheak} className="compare-icon" />
-              ) : undefined}
-            </div>
-          </>
-        );
-      })}
-    </div>
-  );
-};
-
-const switchButtons = (type: PlanCardType) =>
-  type == "Organization" ? (
-    buttonHover()
-  ) : (
-    <button className="plans-card-button">Get Started</button>
-  );
-  
 export const ComparePlans = () => {
+  const checksView = (nameRow: string) => {
+    const currentAdvantage = advantagesChecks.find(
+      (adv) => adv.name == nameRow,
+    );
+
+    return (
+      <div className="compare-checks">
+        {PLANS.map((plan) => {
+          const planKey = plan.type.toLowerCase() as
+            | "starter"
+            | "professional"
+            | "organization";
+
+          const hasAdvantage = currentAdvantage
+            ? currentAdvantage[planKey]
+            : false;
+
+          return (
+            <>
+              <div className="compare-checks">
+                {hasAdvantage ? (
+                  <img src={cheak} className="compare-icon" />
+                ) : undefined}
+              </div>
+            </>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <section className="compare-plans">
       <section className="compare-plans-head">
@@ -59,7 +49,11 @@ export const ComparePlans = () => {
               <span>${plan.price}</span>
               <p>/month</p>
             </div>
-            {switchButtons(plan.type)}
+            {plan.type == "Organization" ? (
+              buttonHover()
+            ) : (
+              <button className="plans-card-button">Get Started</button>
+            )}
           </article>
         ))}
       </section>

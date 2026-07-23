@@ -46,8 +46,12 @@ const PRODUCTS: Product[] = [
   },
 ];
 
+const buttons = ["Best-sellers", "New products"];
+
 export const OurProducts = () => {
-  const [bestSellerButtonActive, setBestSellerButtonActive] = useState(true);
+  const [bestSellerButtonActive, setBestSellerButtonActive] =
+    useState("Best-sellers");
+  const [bestSellerButtonHover, setbestSellerButtonHover] = useState("");
 
   const switchProductCards = () => {
     const filteredProducts = PRODUCTS.filter((product) => {
@@ -85,26 +89,24 @@ export const OurProducts = () => {
       <section className="our-products-head">
         <h2>Our products</h2>
         <section className="our-products-buttons">
-          <button
-            className={
-              bestSellerButtonActive ? "product-card-active" : undefined
-            }
-            onClick={() => {
-              setBestSellerButtonActive(!bestSellerButtonActive);
-            }}
-          >
-            Best-sellers
-          </button>
-          <button
-            className={
-              bestSellerButtonActive ? undefined : "product-card-active"
-            }
-            onClick={() => {
-              setBestSellerButtonActive(!bestSellerButtonActive);
-            }}
-          >
-            New products
-          </button>
+          {buttons.map((button) => {
+            const isActive = button === bestSellerButtonActive;
+            const isHover = button === bestSellerButtonHover;
+
+            return (
+              <button
+                className={isActive ? "product-card-active" : undefined}
+                onMouseEnter={() => setbestSellerButtonHover(button)}
+                onMouseLeave={() => setbestSellerButtonHover("")}
+                style={isHover && isActive != true ? {color: "#565cc4"} : undefined}
+                onClick={() => {
+                  setBestSellerButtonActive(button);
+                }}
+              >
+                {button}
+              </button>
+            );
+          })}
         </section>
       </section>
       <section className="our-products-cards">{switchProductCards()}</section>

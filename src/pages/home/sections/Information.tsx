@@ -36,20 +36,23 @@ const informationButtons = [
 ];
 
 export const Information = () => {
-  const [buttonState, setButtonState] = useState("Benefits");
+  const [buttonActive, setButtonActive] = useState("Benefits");
+  const [buttonHover, setButtonHover] = useState("");
 
   const buttons = () => {
     return informationButtons.map((button) => {
-      const isActive = button === buttonState;
+      const isActive = button === buttonActive;
+      const isHover = button === buttonHover;
       const classSwitch = isActive ? "information-button-active" : undefined;
 
       return (
         <button
           key={button}
           className={classSwitch}
-          onClick={() => {
-            setButtonState(button);
-          }}
+          onClick={() => setButtonActive(button)}
+          onMouseMove={() => setButtonHover(button)}
+          onMouseLeave={() => setButtonHover("")}
+          style={isHover && isActive != true ? {color: "#565cc4"} : undefined}
         >
           {button}
         </button>
@@ -58,7 +61,7 @@ export const Information = () => {
   };
 
   const information = () => {
-    return buttonState == "Benefits" ? (
+    return buttonActive == "Benefits" ? (
       <div className="information-text">
         <h2 className="information-main-heading">Benefits</h2>
 
@@ -79,7 +82,7 @@ export const Information = () => {
       </div>
     ) : (
       <div className="information-text">
-        <h2 className="information-main-heading">{buttonState}</h2>
+        <h2 className="information-main-heading">{buttonActive}</h2>
 
         <p>Content for this section will be added later.</p>
       </div>

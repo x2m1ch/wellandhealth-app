@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import passiveArrow from "/faq/asks/passive.svg";
 import activeArrow from "/faq/asks/active.svg";
+import hoverArrow from "/faq/asks/hover.svg";
 
 import "./styles/asks.css";
 
@@ -41,22 +42,32 @@ export const Asks = () => {
   const [buttonActive, setButtonActive] = useState("General");
   const [stateButtonSwitchDescription, setStateButtonSwitchDescription] =
     useState("Excepteur esse sit sit eiusmod cillum nostr ?");
+  const [buttonHover, setButtonHover] = useState("");
 
   const viewAsks = () =>
     buttonActive == "General"
       ? ASKS.general.map((values) => {
           const isActive = stateButtonSwitchDescription === values.heading;
+          const isHover = buttonHover === values.heading;
 
           return (
             <article>
               <div>
                 <h3>{values.heading}</h3>
                 <img
-                  style={{ userSelect: "none" }}
+                  style={isHover ? { cursor: "pointer", userSelect: "none" } : { userSelect: "none" }}
                   onClick={() => {
                     setStateButtonSwitchDescription(values.heading);
                   }}
-                  src={isActive ? activeArrow : passiveArrow}
+                  onMouseEnter={() => setButtonHover(values.heading)}
+                  onMouseLeave={() => setButtonHover("")}
+                  src={
+                    isHover && isActive != true
+                      ? hoverArrow
+                      : isActive
+                        ? activeArrow
+                        : passiveArrow
+                  }
                 />
               </div>
               <p>{isActive ? values.description : undefined}</p>

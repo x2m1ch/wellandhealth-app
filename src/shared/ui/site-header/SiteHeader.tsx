@@ -17,14 +17,6 @@ const LINKS: Links[] = [
     body: "About us",
   },
   {
-    to: "/yoga",
-    body: "Yoga",
-  },
-  {
-    to: "/ayurvedic",
-    body: "Ayurvedic",
-  },
-  {
     to: "/pricing",
     body: "Pricing"
   },
@@ -56,8 +48,8 @@ export const SiteHeader = () => {
           ))}
         </nav>
         <div className="auth">
-          <button className="auth-items login">Login</button>
-          <button className="auth-items get-free">Try for free</button>
+          <Link to="/" className="auth-items login">Login</Link>
+          <Link to="/" className="auth-items get-free">Try for free</Link>
         </div>
       </div>
     </header>

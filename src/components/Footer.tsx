@@ -23,29 +23,29 @@ const LINKS = {
       body: "Home",
     },
     {
-      to: "/shop",
+      to: "/",
       body: "Shop",
     },
     {
-      to: "/story",
+      to: "/",
       body: "Our Story",
     },
     {
-      to: "/blogs",
+      to: "/",
       body: "Blogs",
     },
   ],
   help: [
     {
-      to: "/shipping",
+      to: "/",
       body: "Shipping & Returns",
     },
     {
-      to: "/track",
+      to: "/",
       body: "Track Order",
     },
     {
-      to: "/help",
+
       body: "FAQs",
     },
   ],
@@ -107,7 +107,9 @@ export const Footer = () => {
 
         <section className="contacts-logos">
           {images.map((images) => (
-            <img className="contacts-logos-items" src={images} alt="" />
+            <Link to="/">
+              <img className="contacts-logos-items" src={images} alt="" />
+            </Link>
           ))}
         </section>
 

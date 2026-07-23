@@ -13,37 +13,32 @@ import { GetInTouch } from "../../components/GetInTouch";
 
 interface Info {
   name: string;
-  to: string;
 }
 
 const INFO: Info[] = [
   {
     name: "Privacy",
-    to: "/privacy",
   },
   {
     name: "Terms",
-    to: "/terms",
   },
   {
     name: "Sitemap",
-    to: "/sitemap",
   },
 ];
 
-export const infoMap = (textColor: "white" | "dark") => (
+export const infoMap = (textColor: "white" | "dark") =>
   INFO.map((info) => (
     <>
       <p>•</p>
       <Link
         style={textColor == "white" ? { color: "white" } : { color: "dark" }}
-        to={info.to}
+        to="/"
       >
         {info.name}
       </Link>
     </>
-  ))
-);
+  ));
 
 export const HomePage = () => {
   return (

@@ -32,6 +32,8 @@ footer > section {
 }
 
 footer > section > section > a {
+  width: fit-content;
+
   color: black;
   font-size: 14px;
 }

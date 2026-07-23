@@ -10,7 +10,7 @@ export const Get = (props: { heading: string }) => {
       <section>
         <h2>{props.heading}</h2>
         <section>
-          <Link to="/login" className="get-started-area-button">
+          <Link to="/" className="get-started-area-button">
             {props.heading == "Getting started" || "Lorem ea irure commod" ? "Sign Up" : "Contact Us"}
           </Link>
         </section>
