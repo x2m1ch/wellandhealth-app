@@ -19,6 +19,10 @@
   font-size: 13px;
 }
 
+.get-in-touch-info > h2 {
+  color: white;
+}
+
 .get-in-touch-info > section {
   gap: 20px;
   display: flex;

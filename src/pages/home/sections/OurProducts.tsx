@@ -46,8 +46,6 @@ const PRODUCTS: Product[] = [
   },
 ];
 
-const buttons = ["Best-sellers", "New products"];
-
 export const OurProducts = () => {
   const [bestSellerButtonActive, setBestSellerButtonActive] = useState(true);
 
@@ -88,7 +86,9 @@ export const OurProducts = () => {
         <h2>Our products</h2>
         <section className="our-products-buttons">
           <button
-            className={bestSellerButtonActive ? "product-card-active" : undefined}
+            className={
+              bestSellerButtonActive ? "product-card-active" : undefined
+            }
             onClick={() => {
               setBestSellerButtonActive(!bestSellerButtonActive);
             }}
@@ -96,7 +96,9 @@ export const OurProducts = () => {
             Best-sellers
           </button>
           <button
-            className={bestSellerButtonActive ? undefined : "product-card-active"}
+            className={
+              bestSellerButtonActive ? undefined : "product-card-active"
+            }
             onClick={() => {
               setBestSellerButtonActive(!bestSellerButtonActive);
             }}

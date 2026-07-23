@@ -60,7 +60,9 @@ export const Features = () => {
             <div className="feature-card-content">
               <div className="feature-card-head">
                 <h3 className="feature-card-title">{feature.title}</h3>
-                <p className="feature-card-description">{feature.description}</p>
+                <p className="feature-card-description">
+                  {feature.description}
+                </p>
               </div>
 
               <Link className="feature-card-link" to="/">
@@ -69,7 +71,12 @@ export const Features = () => {
             </div>
 
             {feature.icon && (
-              <img style={{userSelect: "none", pointerEvents: "none"}} className="feature-card-icon" src={feature.icon} alt="" />
+              <img
+                style={{ userSelect: "none", pointerEvents: "none" }}
+                className="feature-card-icon"
+                src={feature.icon}
+                alt=""
+              />
             )}
           </article>
         ))}

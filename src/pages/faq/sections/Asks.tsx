@@ -42,10 +42,9 @@ export const Asks = () => {
   const [stateButtonSwitchDescription, setStateButtonSwitchDescription] =
     useState("Excepteur esse sit sit eiusmod cillum nostr ?");
 
-  const viewAsks = () => {
-    switch (buttonActive) {
-      case "General":
-        return ASKS.general.map((values) => {
+  const viewAsks = () =>
+    buttonActive == "General"
+      ? ASKS.general.map((values) => {
           const isActive = stateButtonSwitchDescription === values.heading;
 
           return (
@@ -63,12 +62,11 @@ export const Asks = () => {
               <p>{isActive ? values.description : undefined}</p>
             </article>
           );
-        });
-    }
-  };
+        })
+      : undefined;
 
-  const buttonsView = () => {
-    return buttons.map((button) => {
+  const buttonsView = () =>
+    buttons.map((button) => {
       const isActive = button === buttonActive;
       const classSwitch = isActive ? "asks-button-active" : "asks-button";
 
@@ -83,7 +81,6 @@ export const Asks = () => {
         </button>
       );
     });
-  };
 
   return (
     <section className="asks">

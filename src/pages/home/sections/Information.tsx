@@ -58,40 +58,32 @@ export const Information = () => {
   };
 
   const information = () => {
-    switch (buttonState) {
-      case "Benefits":
-        return (
-          <>
-            <div className="information-text">
-              <h2 className="information-main-heading">Benefits</h2>
+    return buttonState == "Benefits" ? (
+      <div className="information-text">
+        <h2 className="information-main-heading">Benefits</h2>
 
-              <p>
-                Consectetur excepteur elit ullamco incididunt voluptate tempor
-                exercitation. Lorem commodo ullamco quis velit officia aute
-                laboris elit sit exercitation ut esse pariatur occaecat quis
-              </p>
+        <p>
+          Consectetur excepteur elit ullamco incididunt voluptate tempor
+          exercitation. Lorem commodo ullamco quis velit officia aute laboris
+          elit sit exercitation ut esse pariatur occaecat quis
+        </p>
 
-              <div className="information-blocks">
-                {BENEFITS.map((data) => (
-                  <div key={data.heading}>
-                    <h3 className="information-headings">{data.heading}</h3>
-                    <p>{data.description}</p>
-                  </div>
-                ))}
-              </div>
+        <div className="information-blocks">
+          {BENEFITS.map((data) => (
+            <div key={data.heading}>
+              <h3 className="information-headings">{data.heading}</h3>
+              <p>{data.description}</p>
             </div>
-          </>
-        );
+          ))}
+        </div>
+      </div>
+    ) : (
+      <div className="information-text">
+        <h2 className="information-main-heading">{buttonState}</h2>
 
-      default:
-        return (
-          <div className="information-text">
-            <h2 className="information-main-heading">{buttonState}</h2>
-
-            <p>Content for this section will be added later.</p>
-          </div>
-        );
-    }
+        <p>Content for this section will be added later.</p>
+      </div>
+    );
   };
 
   return (

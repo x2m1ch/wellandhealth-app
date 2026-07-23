@@ -7,47 +7,23 @@ import "./styles/flexible-plans.css";
 import "../styles/plans.css";
 
 export const FlexiblePlans = () => {
-  const switchCardDescriptionByType = (type: PlanCardType) => {
-    switch (type) {
-      case "Starter":
-        return "Perfect for personal use";
-      case "Professional":
-        return "Perfect for small teams";
-      default:
-        return "Perfect for organizations";
-    }
-  };
+  const switchColorByType = (type: PlanCardType) =>
+    type == "Professional"
+      ? { backgroundColor: "#2C35E0", color: "white" }
+      : { backgroundColor: "#F2F2FD" };
 
-  const switchColorByType = (type: PlanCardType) => {
-    switch (type) {
-      case "Professional":
-        return { backgroundColor: "#2C35E0", color: "white" };
-      default:
-        return { backgroundColor: "#F2F2FD" };
-    }
-  };
+  const switchTextColorByType = (type: PlanCardType) =>
+    type == "Professional" ? { color: "#F2F2FD" } : { color: "#9095A0" };
 
-  const switchTextColorByType = (type: PlanCardType) => {
-    switch (type) {
-      case "Professional":
-        return { color: "#F2F2FD" };
-      default:
-        return { color: "#9095A0" };
-    }
-  };
-
-  const viewAdvantages = (advantages: string[] | undefined) => {
-    if (advantages) {
-      return advantages.map((advantage) => (
-        <div>
-          <img src={check} alt="" />
-          <p>{advantage}</p>
-        </div>
-      ));
-    } else {
-      return;
-    }
-  };
+  const viewAdvantages = (advantages: string[] | undefined) =>
+    advantages
+      ? advantages.map((advantage) => (
+          <div>
+            <img src={check} alt="" />
+            <p>{advantage}</p>
+          </div>
+        ))
+      : undefined;
 
   return (
     <section className="flexible-plans">
@@ -60,36 +36,42 @@ export const FlexiblePlans = () => {
       </section>
       <section className="flexible-plans-cards">
         {PLANS.map((plan) => {
-          return <article
-            className="flexible-plans-card"
-            style={switchColorByType(plan.type)}
-          >
-            <section>
-              <section className="plans-card-head">
-                <h3
-                  className="plans-heading"
-                  style={switchColorByType(plan.type)}
-                >
-                  {plan.type}
-                </h3>
-                <div className="plans-card-price">
-                  <span>${plan.price}</span>
-                  <p style={switchTextColorByType(plan.type)}>/month</p>
-                </div>
-                <p style={switchTextColorByType(plan.type)}>
-                  {switchCardDescriptionByType(plan.type)}
-                </p>
+          return (
+            <article
+              className="flexible-plans-card"
+              style={switchColorByType(plan.type)}
+            >
+              <section>
+                <section className="plans-card-head">
+                  <h3
+                    className="plans-heading"
+                    style={switchColorByType(plan.type)}
+                  >
+                    {plan.type}
+                  </h3>
+                  <div className="plans-card-price">
+                    <span>${plan.price}</span>
+                    <p style={switchTextColorByType(plan.type)}>/month</p>
+                  </div>
+                  <p style={switchTextColorByType(plan.type)}>
+                    {plan.type == "Starter"
+                      ? "Perfect for personal use"
+                      : plan.type == "Professional"
+                        ? "Perfect for small teams"
+                        : "Perfect for organizations"}
+                  </p>
+                </section>
+                <section className="flexible-plans-card-advantages">
+                  {viewAdvantages(plan.advantages)}
+                </section>
               </section>
-              <section className="flexible-plans-card-advantages">
-                {viewAdvantages(plan.advantages)}
-              </section>
-            </section>
-            {plan.type == "Organization" ? (
-              buttonHover()
-            ) : (
-              <button className="plans-card-button">Get Started</button>
-            )}
-          </article>;
+              {plan.type == "Organization" ? (
+                buttonHover()
+              ) : (
+                <button className="plans-card-button">Get Started</button>
+              )}
+            </article>
+          );
         })}
       </section>
     </section>

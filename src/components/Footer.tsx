@@ -16,7 +16,7 @@ const images = [
   "/components/footer/youtube.png",
 ];
 
-const links = {
+const LINKS = {
   about: [
     {
       to: "/",
@@ -51,20 +51,20 @@ const links = {
   ],
 };
 
-const columns: Column[] = [
+const COLUMNS: Column[] = [
   {
     heading: "About",
-    links: links.about,
+    links: LINKS.about,
   },
   {
     heading: "Help",
-    links: links.help,
+    links: LINKS.help,
   },
 ];
 
 export const Footer = () => {
-  const renderColumns = () => {
-    return columns.map((columns) => (
+  const renderColumns = () =>
+    COLUMNS.map((columns) => (
       <section className="footer-sections">
         <h2 className="footer-headings">{columns.heading}</h2>
         {columns.links.map((link) => (
@@ -72,7 +72,6 @@ export const Footer = () => {
         ))}
       </section>
     ));
-  };
 
   return (
     <footer>

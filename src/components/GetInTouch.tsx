@@ -30,21 +30,17 @@ const images = [
 ];
 
 export const GetInTouch = () => {
-  const switchInputByType = (type: string) => {
-    switch (type) {
-      case "name":
-        return "Enter your name";
-      case "email":
-        return "Enter your email";
-      case "message":
-        return "Enter your message here";
-    }
-  };
+  const switchInputByType = (type: "name" | "email" | "message") =>
+    type == "name"
+      ? "Enter your name"
+      : type == "email"
+        ? "Enter your email"
+        : "Enter your message here";
 
   return (
     <section className="get-in-touch">
       <section className="get-in-touch-info">
-        <h2 style={{ color: "white" }}>Get In Touch</h2>
+        <h2>Get In Touch</h2>
 
         <section>
           <section className="get-in-touch-images">
@@ -61,16 +57,16 @@ export const GetInTouch = () => {
 
       <section className="get-in-touch-inputs">
         {INPUTS.map((input) => (
-          <>
-            <div className="get-in-touch-input">
-              <p>{input.name}</p>
-              <input
-                  type="text"
-                  style={input.type == 'message' ? {paddingBottom: "100px"}: undefined}
-                  placeholder={switchInputByType(input.type)}
-                />
-            </div>
-          </>
+          <div className="get-in-touch-input">
+            <p>{input.name}</p>
+            <input
+              type="text"
+              style={
+                input.type == "message" ? { paddingBottom: "100px" } : undefined
+              }
+              placeholder={switchInputByType(input.type)}
+            />
+          </div>
         ))}
 
         <button className="get-in-touch-submit">Submit</button>

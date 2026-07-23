@@ -40,15 +40,13 @@ const checksView = (nameRow: string) => {
   );
 };
 
-const switchButtons = (type: PlanCardType) => {
-  switch (type) {
-    case "Organization":
-      return buttonHover();
-    default:
-      return <button className="plans-card-button">Get Started</button>;
-  }
-};
-
+const switchButtons = (type: PlanCardType) =>
+  type == "Organization" ? (
+    buttonHover()
+  ) : (
+    <button className="plans-card-button">Get Started</button>
+  );
+  
 export const ComparePlans = () => {
   return (
     <section className="compare-plans">
@@ -66,34 +64,27 @@ export const ComparePlans = () => {
         ))}
       </section>
       <section className="compare-plans-info">
-        {namesRows.map((row) => {
-          switch (row) {
-            case "30-day free trial":
-              return (
-                <>
-                  <article className="compare-plans-info-rows">
-                    <section>
-                      <h3>{row}</h3>
-                      <p>
-                        Laborum minim cillum sit labore adipisicing lorem non
-                        incididunt irure Ipsum labore
-                      </p>
-                    </section>
-                    {checksView(row)}
-                  </article>
-                </>
-              );
-            default:
-              return (
-                <article className="compare-plans-info-rows">
-                  <section>
-                    <h3>{row}</h3>
-                  </section>
-                  {checksView(row)}
-                </article>
-              );
-          }
-        })}
+        {namesRows.map((row) =>
+          row == "30-day free trial" ? (
+            <article className="compare-plans-info-rows">
+              <section>
+                <h3>{row}</h3>
+                <p>
+                  Laborum minim cillum sit labore adipisicing lorem non
+                  incididunt irure Ipsum labore
+                </p>
+              </section>
+              {checksView(row)}
+            </article>
+          ) : (
+            <article className="compare-plans-info-rows">
+              <section>
+                <h3>{row}</h3>
+              </section>
+              {checksView(row)}
+            </article>
+          ),
+        )}
       </section>
     </section>
   );

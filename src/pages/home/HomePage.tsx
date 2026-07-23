@@ -16,7 +16,7 @@ interface Info {
   to: string;
 }
 
-const info: Info[] = [
+const INFO: Info[] = [
   {
     name: "Privacy",
     to: "/privacy",
@@ -31,8 +31,8 @@ const info: Info[] = [
   },
 ];
 
-export const infoMap = (textColor: "white" | "dark") => {
-  return info.map((info) => (
+export const infoMap = (textColor: "white" | "dark") => (
+  INFO.map((info) => (
     <>
       <p>•</p>
       <Link
@@ -42,8 +42,8 @@ export const infoMap = (textColor: "white" | "dark") => {
         {info.name}
       </Link>
     </>
-  ));
-};
+  ))
+);
 
 export const HomePage = () => {
   return (
@@ -57,7 +57,7 @@ export const HomePage = () => {
         <Marquee />
         <Information />
         <Blog />
-        <Get heading="Getting started"/>
+        <Get heading="Getting started" />
       </main>
 
       <GetInTouch />
