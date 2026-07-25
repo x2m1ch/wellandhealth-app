@@ -12,18 +12,24 @@
   --font-main: "Poppins", sans-serif;
   --font-heading: "Archivo", sans-serif;
   --font-ui: "Inter", sans-serif;
+
+  --page-inline-padding: 100px;
+  --page-block-padding: 70px;
+  --section-gap: 60px;
 }
 
 body {
   font-family: var(--font-main);
+  color: var(--color-text-main);
+  min-width: 320px;
 }
 
 .app-pages {
-  gap: 60px;
+  gap: var(--section-gap);
   display: flex;
   flex-direction: column;
 
-  padding: 70px 100px;
+  padding: var(--page-block-padding) var(--page-inline-padding);
 }
 
 h1 {
@@ -60,4 +66,41 @@ p {
 .description {
   color: #323842;
   font-size: 14px;
+}
+
+@media (max-width: 1199px) {
+  :root {
+    --page-inline-padding: 56px;
+    --page-block-padding: 56px;
+    --section-gap: 52px;
+  }
+
+  h2 {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --page-inline-padding: 24px;
+    --page-block-padding: 42px;
+    --section-gap: 44px;
+  }
+
+  h2 {
+    font-size: 34px;
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 479px) {
+  :root {
+    --page-inline-padding: 18px;
+    --page-block-padding: 34px;
+    --section-gap: 36px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
 }

@@ -1,18 +1,18 @@
 .get-in-touch {
+  gap: 48px;
   display: flex;
   justify-content: space-between;
 
   background-color: #1d2128;
   width: 100%;
   height: fit-content;
-  padding: 70px 100px;
-  padding-bottom: 50px;
+  padding: 70px var(--page-inline-padding) 50px;
 
   color: white;
 }
 
 .get-in-touch-info {
-  gap: 160px;
+  gap: clamp(56px, 10vw, 160px);
   display: flex;
   flex-direction: column;
 
@@ -65,7 +65,7 @@
 }
 
 .get-in-touch-input > input {
-  width: 600px;
+  width: min(600px, 100%);
   padding: 16px;
   background-color: #1d2128;
   border: 1px solid #dee1e6;
@@ -90,4 +90,30 @@
 
 .get-in-touch-submit:hover {
   background-color: #7076e2;
+}
+
+@media (max-width: 1023px) {
+  .get-in-touch {
+    flex-direction: column;
+  }
+
+  .get-in-touch-inputs {
+    width: 100%;
+  }
+
+  .get-in-touch-input {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 767px) {
+  .get-in-touch {
+    padding-top: 48px;
+    padding-bottom: 42px;
+  }
+
+  .get-in-touch-images {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
 }

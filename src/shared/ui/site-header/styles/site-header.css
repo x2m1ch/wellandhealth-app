@@ -1,8 +1,9 @@
 .header {
+  gap: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 21px 45px;
+  padding: 21px var(--page-inline-padding);
   line-height: 22px;
 }
 
@@ -13,8 +14,9 @@
 }
 
 .nav-and-auth {
-  gap: 90px;
+  gap: clamp(28px, 6vw, 90px);
   display: flex;
+  align-items: center;
 }
 
 .links {
@@ -61,4 +63,54 @@
 
 .get-free:hover {
   background-color: #7076e2;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    align-items: flex-start;
+  }
+
+  .nav-and-auth {
+    gap: 18px;
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  .header-nav {
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .nav-and-auth {
+    width: 100%;
+    align-items: center;
+  }
+
+  .header-nav {
+    justify-content: center;
+  }
+
+  .auth {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .header-nav {
+    gap: 12px 16px;
+  }
+
+  .links {
+    font-size: 14px;
+  }
 }

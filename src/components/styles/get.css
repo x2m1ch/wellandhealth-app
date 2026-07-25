@@ -1,9 +1,11 @@
 .get-started-area {
+  position: relative;
   display: flex;
   justify-content: center;
 
   width: 100%;
-  height: 240px;
+  min-height: 240px;
+  overflow: hidden;
   background-color: white;
   border-radius: 20px;
   border-color: #171a1f;
@@ -17,15 +19,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 38px 24px;
+  text-align: center;
 }
 
 .get-started-area > section > h2 {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .get-started-area-image {
   position: absolute;
-  margin: 130px 0px 0px 400px;
+  right: 24%;
+  bottom: 28px;
   width: 70px;
 }
 
@@ -42,4 +47,32 @@
 
 .get-started-area-button:hover {
   background-color: #6fbc78;
+}
+
+@media (max-width: 767px) {
+  .get-started-area {
+    min-height: 220px;
+    border-radius: 16px;
+  }
+
+  .get-started-area > section > h2,
+  .get-started-area-button {
+    margin-left: 0;
+  }
+
+  .get-started-area-button {
+    padding-inline: 48px;
+  }
+
+  .get-started-area-image {
+    right: 18px;
+    bottom: 18px;
+    width: 54px;
+  }
+}
+
+@media (max-width: 479px) {
+  .get-started-area > section {
+    padding: 34px 18px 58px;
+  }
 }

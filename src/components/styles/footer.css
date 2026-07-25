@@ -1,8 +1,9 @@
 footer {
+  gap: 48px;
   display: flex;
   justify-content: space-between;
 
-  padding: 70px 100px;
+  padding: 70px var(--page-inline-padding);
 }
 
 .footer-sections {
@@ -27,7 +28,7 @@ footer > section > section > h3 {
 }
 
 footer > section {
-  gap: 110px;
+  gap: clamp(44px, 8vw, 110px);
   display: flex;
 }
 
@@ -98,6 +99,45 @@ input:focus {
 .footer-info {
   gap: 10px;
   display: flex;
+  flex-wrap: wrap;
 
   font-size: 14px;
+}
+
+@media (max-width: 1023px) {
+  footer {
+    flex-direction: column;
+  }
+
+  footer > section {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .subscribe-input {
+    align-items: stretch;
+    flex-direction: column;
+    max-width: 420px;
+  }
+
+  .subscribe-input-body {
+    border-radius: 12px;
+  }
+
+  .subscribe-input-button {
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 479px) {
+  footer > section {
+    flex-direction: column;
+  }
 }

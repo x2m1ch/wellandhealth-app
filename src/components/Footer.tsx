@@ -45,7 +45,7 @@ const LINKS = {
       body: "Track Order",
     },
     {
-
+      to: "/faq",
       body: "FAQs",
     },
   ],
