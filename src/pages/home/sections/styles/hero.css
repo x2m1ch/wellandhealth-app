@@ -2,11 +2,16 @@
   position: relative;
   display: block;
   width: 100%;
+  min-height: 360px;
+  overflow: hidden;
 }
 
 .hero > img {
   display: block;
   width: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-body {
@@ -24,13 +29,13 @@
 .hero-heading {
   text-align: center;
   color: #171a1f;
-  font-size: 80px;
+  font-size: clamp(42px, 5.6vw, 80px);
   font-weight: 600;
   line-height: 1;
 }
 
 .hero-heading > div {
-  font-size: 50px;
+  font-size: clamp(28px, 3.5vw, 50px);
 }
 
 .button-auth-hero {
@@ -47,4 +52,39 @@
   background-color: #636ae8;
 
   color: white;
+}
+
+@media (max-width: 767px) {
+  .hero,
+  .hero > img {
+    min-height: 430px;
+  }
+
+  .hero-body {
+    width: min(100% - 48px, 620px);
+    top: 45%;
+  }
+
+  .button-auth-hero {
+    padding: 14px 58px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero,
+  .hero > img {
+    min-height: 390px;
+  }
+
+  .hero-body {
+    gap: 24px;
+    width: min(100% - 36px, 360px);
+  }
+
+  .button-auth-hero {
+    width: 100%;
+    max-width: 240px;
+    padding-inline: 24px;
+  }
 }

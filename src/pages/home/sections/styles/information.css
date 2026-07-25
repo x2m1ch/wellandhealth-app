@@ -8,6 +8,7 @@
     gap: 60px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     color: #636AE8;
 }
@@ -19,7 +20,9 @@
 }
 
 .information-body {
+    gap: 48px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -39,6 +42,11 @@
     font-size: 40px;
 }
 
+.information-body > img {
+    flex: 0 1 48%;
+    min-width: 0;
+}
+
 .information-blocks {
     gap: 10px;
     display: flex;
@@ -49,4 +57,30 @@
     color: #323842;
     font-weight: 700;
     font-size: 20px;
+}
+
+@media (max-width: 1023px) {
+    .switch-information-buttons {
+        gap: 18px;
+    }
+
+    .information-body {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .information-body > img {
+        width: min(100%, 620px);
+        align-self: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .information-button-active {
+        padding: 12px 32px;
+    }
+
+    .information-main-heading {
+        font-size: 32px;
+    }
 }

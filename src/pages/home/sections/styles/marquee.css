@@ -57,6 +57,7 @@
 
 .marquee-track {
   flex: 1;
+  min-width: 0;
   overflow: hidden;
   padding: 4px 0;
 }
@@ -99,4 +100,45 @@
   color: var(--color-primary);
   font-size: 12px;
   object-fit: contain;
+}
+
+@media (max-width: 767px) {
+  .marquee-section {
+    margin-top: 0;
+    padding-bottom: 18px;
+  }
+
+  .marquee-title {
+    margin-bottom: 24px;
+  }
+
+  .marquee-carousel {
+    gap: 12px;
+  }
+
+  .marquee-control {
+    width: 34px;
+    height: 34px;
+  }
+
+  .marquee-item {
+    flex-basis: 180px;
+    font-size: 14px;
+  }
+
+  .marquee-logo {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 479px) {
+  .marquee-carousel {
+    gap: 8px;
+  }
+
+  .marquee-item {
+    flex-basis: 160px;
+  }
 }

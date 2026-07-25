@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import "./styles/marquee.css";
 
@@ -36,8 +36,6 @@ const getInitials = (name: string) => {
 };
 
 const COPIES_COUNT = 3;
-const CARD_WIDTH = 220;
-const CARD_GAP = 18;
 const CARDS_PER_CLICK = 3;
 const INITIAL_COPY_INDEX = 1;
 
@@ -46,8 +44,31 @@ export const Marquee = ({
   label = "Our customers",
 }: Partial<MarqueeProps>) => {
   const loopItems = Array.from({ length: COPIES_COUNT }, () => items).flat();
+  const listRef = useRef<HTMLDivElement>(null);
+  const [itemStep, setItemStep] = useState(238);
   const [activeIndex, setActiveIndex] = useState(items.length * INITIAL_COPY_INDEX);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
+
+  useEffect(() => {
+    const updateItemStep = () => {
+      const list = listRef.current;
+      const firstItem = list?.querySelector<HTMLElement>(".marquee-item");
+
+      if (!list || !firstItem) {
+        return;
+      }
+
+      const gap = Number.parseFloat(window.getComputedStyle(list).columnGap) || 0;
+      setItemStep(firstItem.offsetWidth + gap);
+    };
+
+    updateItemStep();
+    window.addEventListener("resize", updateItemStep);
+
+    return () => {
+      window.removeEventListener("resize", updateItemStep);
+    };
+  }, [items.length]);
 
   useEffect(() => {
     setIsTransitionEnabled(false);
@@ -106,11 +127,12 @@ export const Marquee = ({
 
         <div className="marquee-track">
           <div
+            ref={listRef}
             className={`marquee-list ${
               isTransitionEnabled ? "" : "marquee-list--no-transition"
             }`}
             style={{
-              transform: `translateX(-${activeIndex * (CARD_WIDTH + CARD_GAP)}px)`,
+              transform: `translateX(-${activeIndex * itemStep}px)`,
             }}
             onTransitionEnd={normalizeIndex}
           >

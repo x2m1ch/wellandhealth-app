@@ -15,6 +15,8 @@
 .our-products-buttons {
   gap: 20px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
   color: #636ae8;
   font-size: 14px;
@@ -23,7 +25,9 @@
 
 .our-products-cards {
   gap: 30px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
 
   font-family: "Inter";
 }
@@ -32,6 +36,14 @@
   gap: 15px;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+}
+
+.product-card > img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .best-seller {
@@ -92,9 +104,36 @@
 }
 
 .product-shop-button {
+  flex: 0 0 auto;
   padding: 10px 10px;
   border-color: #636ae8;
   border-radius: 100%;
   border-style: solid;
   border-width: 1px;
+}
+
+@media (max-width: 1023px) {
+  .our-products-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .our-products {
+    gap: 36px;
+  }
+
+  .our-products-head {
+    gap: 26px;
+  }
+}
+
+@media (max-width: 479px) {
+  .our-products-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card-active {
+    padding-inline: 26px;
+  }
 }

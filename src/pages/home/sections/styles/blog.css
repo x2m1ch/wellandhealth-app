@@ -6,6 +6,7 @@
 .blog {
   gap: 40px;
   display: flex;
+  align-items: flex-start;
 
   font-family: "Inter";
 }
@@ -46,17 +47,22 @@
 
 .blog-cards {
   gap: 20px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
 }
 
 .blog-card {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 4px 9px #cdcfd1;
-  width: 302px;
+  min-width: 0;
 }
 
 .blog-card-image {
+  width: 100%;
+  aspect-ratio: 302 / 196;
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -103,4 +109,34 @@
 .ladel-two {
   color: var(--ladel-two);
   background-color: #FDF1F5;
+}
+
+@media (max-width: 1199px) {
+  .blog {
+    flex-direction: column;
+  }
+
+  .blog-information {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-information {
+    flex-direction: column;
+  }
+
+  .blog-cards-switch-buttons {
+    justify-content: flex-start;
+  }
+
+  .blog-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-information-name {
+    font-size: 34px;
+  }
 }

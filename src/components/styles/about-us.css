@@ -1,6 +1,8 @@
 .about-us {
+  gap: 48px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .about-us-body {
@@ -17,8 +19,9 @@
 } 
 
 .about-us-text {
-    font-size: 17px;
-    line-height: 150%;
+  font-size: 17px;
+  line-height: 150%;
+  max-width: 650px;
 }
 
 .button-learn-more {
@@ -37,4 +40,28 @@
   background-color: #636ae8;
 
   color: white;
+}
+
+.about-us > img {
+  flex: 0 1 48%;
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .about-us {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .about-us > img {
+    width: min(100%, 620px);
+    align-self: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .button-learn-more {
+    width: 100%;
+    padding-inline: 24px;
+  }
 }
