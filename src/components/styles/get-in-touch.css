@@ -1,9 +1,7 @@
 .get-in-touch {
-  /* Большой, но ограниченный gap держит форму ближе к середине секции, не выталкивая её к правому краю на wide desktop. */
-  gap: clamp(160px, 22vw, 390px);
   display: flex;
-  /* flex-start нужен вместо space-between, чтобы форма не уезжала к самому краю широкого экрана. */
-  justify-content: flex-start;
+  /* Возвращаем desktop-раскладку из main: левая часть остаётся слева, а большая форма уходит правее. */
+  justify-content: space-between;
 
   background-color: #1d2128;
   width: 100%;
@@ -48,6 +46,8 @@
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  /* На desktop форма должна иметь ширину полей из main, иначе input с width: 100% схлопывается по контенту. */
+  width: 600px;
 }
 
 .get-in-touch-input {
@@ -69,8 +69,8 @@
 }
 
 .get-in-touch-input > input {
-  /* Поле сохраняет desktop-ширину 600px, но на узких экранах не выходит за родителя. */
-  width: min(600px, 100%);
+  /* Поле занимает всю desktop-ширину формы, которая совпадает с 600px из main. */
+  width: 100%;
   padding: 16px;
   background-color: #1d2128;
   border: 1px solid #dee1e6;
@@ -106,12 +106,7 @@
 
   .get-in-touch-inputs {
     /* Форма занимает доступную ширину контейнера после перехода в колонку. */
-    width: 100%;
-  }
-
-  .get-in-touch-input {
-    /* При этом сами поля не растягиваются бесконечно на широком планшете. */
-    max-width: 600px;
+    width: min(600px, 100%);
   }
 }
 
