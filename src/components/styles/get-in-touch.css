@@ -1,8 +1,9 @@
 .get-in-touch {
-  /* Gap гарантирует расстояние между текстовой частью и формой, когда flex начинает сжиматься. */
-  gap: 48px;
+  /* Большой, но ограниченный gap держит форму ближе к середине секции, не выталкивая её к правому краю на wide desktop. */
+  gap: clamp(160px, 22vw, 390px);
   display: flex;
-  justify-content: space-between;
+  /* flex-start нужен вместо space-between, чтобы форма не уезжала к самому краю широкого экрана. */
+  justify-content: flex-start;
 
   background-color: #1d2128;
   width: 100%;
@@ -99,6 +100,7 @@
 @media (max-width: 1023px) {
   .get-in-touch {
     /* На планшете форма уходит под текстовый блок, чтобы не сжиматься до неудобной ширины. */
+    gap: 48px;
     flex-direction: column;
   }
 
