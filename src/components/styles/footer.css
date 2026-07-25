@@ -1,8 +1,10 @@
 footer {
+  /* Gap нужен, чтобы при переносе колонок footer не слипался с формой подписки. */
   gap: 48px;
   display: flex;
   justify-content: space-between;
 
+  /* Footer использует общий горизонтальный padding, чтобы совпадать с шириной контента страниц. */
   padding: 70px var(--page-inline-padding);
 }
 
@@ -28,6 +30,7 @@ footer > section > section > h3 {
 }
 
 footer > section {
+  /* clamp сохраняет просторный desktop footer, но уменьшает расстояния между колонками на средних ширинах. */
   gap: clamp(44px, 8vw, 110px);
   display: flex;
 }
@@ -99,6 +102,7 @@ input:focus {
 .footer-info {
   gap: 10px;
   display: flex;
+  /* Legal-ссылки переносятся на новую строку, если им не хватает ширины. */
   flex-wrap: wrap;
 
   font-size: 14px;
@@ -106,10 +110,12 @@ input:focus {
 
 @media (max-width: 1023px) {
   footer {
+    /* На планшете две большие части footer ставятся друг под другом, иначе форма подписки сжимает колонки. */
     flex-direction: column;
   }
 
   footer > section {
+    /* Колонки footer могут переноситься, сохраняя равномерное распределение по строке. */
     justify-content: space-between;
     flex-wrap: wrap;
   }
@@ -117,27 +123,32 @@ input:focus {
 
 @media (max-width: 767px) {
   footer {
+    /* Уменьшаем вертикальные поля footer, чтобы он не занимал слишком много мобильного экрана. */
     padding-top: 48px;
     padding-bottom: 48px;
   }
 
   .subscribe-input {
+    /* Поле email и кнопка подписки становятся вертикальными, потому что горизонтальная форма слишком широкая для mobile. */
     align-items: stretch;
     flex-direction: column;
     max-width: 420px;
   }
 
   .subscribe-input-body {
+    /* После вертикального раскладывания у input больше нет общей рамки с кнопкой, поэтому скругляем все углы. */
     border-radius: 12px;
   }
 
   .subscribe-input-button {
+    /* Кнопка тоже получает полное скругление, чтобы не оставались desktop-углы только справа. */
     border-radius: 12px;
   }
 }
 
 @media (max-width: 479px) {
   footer > section {
+    /* На узком mobile footer-колонки идут одна под другой, чтобы каждая ссылка оставалась читаемой. */
     flex-direction: column;
   }
 }

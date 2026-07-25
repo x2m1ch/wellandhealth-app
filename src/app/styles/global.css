@@ -13,6 +13,7 @@
   --font-heading: "Archivo", sans-serif;
   --font-ui: "Inter", sans-serif;
 
+  /* Общие отступы вынесены в переменные, чтобы header, страницы и нижние блоки сжимались одинаково на всех брейкпоинтах. */
   --page-inline-padding: 100px;
   --page-block-padding: 70px;
   --section-gap: 60px;
@@ -20,15 +21,19 @@
 
 body {
   font-family: var(--font-main);
+  /* Базовый цвет текста нужен как fallback для компонентов, где цвет не задан явно. */
   color: var(--color-text-main);
+  /* 320px оставляет минимально поддерживаемую ширину макета и предотвращает сжатие страницы до нечитаемого состояния. */
   min-width: 320px;
 }
 
 .app-pages {
+  /* Главный вертикальный промежуток теперь меняется через --section-gap, а не фиксируется одним desktop-значением. */
   gap: var(--section-gap);
   display: flex;
   flex-direction: column;
 
+  /* Общий контейнер страницы использует те же responsive-отступы, что и общие секции ниже. */
   padding: var(--page-block-padding) var(--page-inline-padding);
 }
 
@@ -70,24 +75,28 @@ p {
 
 @media (max-width: 1199px) {
   :root {
+    /* Small desktop/tablet: уменьшаем поля и расстояния, чтобы контент не становился слишком узким. */
     --page-inline-padding: 56px;
     --page-block-padding: 56px;
     --section-gap: 52px;
   }
 
   h2 {
+    /* Заголовки немного уменьшаются раньше планшетного брейкпоинта, чтобы длинные названия секций не переносились слишком грубо. */
     font-size: 44px;
   }
 }
 
 @media (max-width: 767px) {
   :root {
+    /* Tablet/mobile: боковые отступы становятся компактными, но сохраняют воздух у края экрана. */
     --page-inline-padding: 24px;
     --page-block-padding: 42px;
     --section-gap: 44px;
   }
 
   h2 {
+    /* На мобильных h2 должен быть заметным, но уже не desktop-hero масштабом. */
     font-size: 34px;
     line-height: 1.15;
   }
@@ -95,12 +104,14 @@ p {
 
 @media (max-width: 479px) {
   :root {
+    /* Narrow mobile: минимальные поля помогают карточкам и кнопкам помещаться без горизонтального скролла. */
     --page-inline-padding: 18px;
     --page-block-padding: 34px;
     --section-gap: 36px;
   }
 
   h2 {
+    /* Дополнительное уменьшение h2 для экранов около 375px и ниже. */
     font-size: 30px;
   }
 }

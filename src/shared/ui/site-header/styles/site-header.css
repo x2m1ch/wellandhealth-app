@@ -1,8 +1,10 @@
 .header {
+  /* Gap сохраняет расстояние между логотипом и правой частью, когда header начинает сжиматься. */
   gap: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Header подключен к общим page padding, чтобы совпадать с остальными секциями на разных ширинах. */
   padding: 21px var(--page-inline-padding);
   line-height: 22px;
 }
@@ -14,8 +16,10 @@
 }
 
 .nav-and-auth {
+  /* clamp сохраняет большой desktop-промежуток, но не даёт ему съедать место на планшете. */
   gap: clamp(28px, 6vw, 90px);
   display: flex;
+  /* Выравнивание нужно после перехода gap на responsive-значение, чтобы nav и auth оставались на одной оси. */
   align-items: center;
 }
 
@@ -67,16 +71,19 @@
 
 @media (max-width: 1023px) {
   .header {
+    /* На планшете правая часть становится двухстрочной, поэтому выравниваем header по верхнему краю. */
     align-items: flex-start;
   }
 
   .nav-and-auth {
+    /* Nav и auth складываются в колонку, чтобы меню не переполняло ширину. */
     gap: 18px;
     align-items: flex-end;
     flex-direction: column;
   }
 
   .header-nav {
+    /* Ссылки могут переноситься, но остаются прижатыми к правому краю desktop/tablet layout. */
     justify-content: flex-end;
     flex-wrap: wrap;
   }
@@ -84,6 +91,7 @@
 
 @media (max-width: 767px) {
   .header {
+    /* На мобильном header превращается в вертикальный блок: бренд сверху, меню и auth ниже по центру. */
     padding-top: 18px;
     padding-bottom: 18px;
     align-items: center;
@@ -91,15 +99,18 @@
   }
 
   .nav-and-auth {
+    /* 100% ширины даёт nav/auth место для центрирования и переносов. */
     width: 100%;
     align-items: center;
   }
 
   .header-nav {
+    /* Центрируем многострочное меню на мобильных, чтобы оно не выглядело обрезанным справа. */
     justify-content: center;
   }
 
   .auth {
+    /* Login и Try for free могут перенестись вместо выхода за экран. */
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -107,10 +118,12 @@
 
 @media (max-width: 479px) {
   .header-nav {
+    /* Сужаем расстояния между ссылками для самых узких экранов. */
     gap: 12px 16px;
   }
 
   .links {
+    /* Чуть меньший размер ссылок помогает поместить меню без горизонтального скролла. */
     font-size: 14px;
   }
 }

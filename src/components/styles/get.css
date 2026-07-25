@@ -1,10 +1,13 @@
 .get-started-area {
+  /* relative нужен для декоративной стрелки внутри CTA, чтобы она позиционировалась от самой секции. */
   position: relative;
   display: flex;
   justify-content: center;
 
   width: 100%;
+  /* min-height вместо height позволяет блоку расти, если текст переносится на мобильных. */
   min-height: 240px;
+  /* overflow скрывает декоративную стрелку, если она подходит слишком близко к краю контейнера. */
   overflow: hidden;
   background-color: white;
   border-radius: 20px;
@@ -19,7 +22,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Внутренний padding защищает текст и кнопку от прилипания к рамке при переносах. */
   padding: 38px 24px;
+  /* Центрирование текста нужно после разрешения переносов на узких экранах. */
   text-align: center;
 }
 
@@ -29,6 +34,7 @@
 
 .get-started-area-image {
   position: absolute;
+  /* Позиционируем стрелку через right/bottom вместо margin, чтобы она двигалась вместе с размерами блока. */
   right: 24%;
   bottom: 28px;
   width: 70px;
@@ -51,20 +57,25 @@
 
 @media (max-width: 767px) {
   .get-started-area {
+    /* CTA становится немного ниже desktop-версии, но остаётся достаточно высоким для перенесённого заголовка. */
     min-height: 220px;
+    /* Меньший radius лучше соответствует компактному мобильному блоку. */
     border-radius: 16px;
   }
 
   .get-started-area > section > h2,
   .get-started-area-button {
+    /* Убираем desktop-смещение влево: на мобильном элементы должны быть реально по центру. */
     margin-left: 0;
   }
 
   .get-started-area-button {
+    /* Кнопка остаётся крупной, но уже не занимает чрезмерную ширину экрана. */
     padding-inline: 48px;
   }
 
   .get-started-area-image {
+    /* Стрелка переносится ближе к правому нижнему углу и уменьшается, чтобы не перекрывать кнопку. */
     right: 18px;
     bottom: 18px;
     width: 54px;
@@ -73,6 +84,7 @@
 
 @media (max-width: 479px) {
   .get-started-area > section {
+    /* Нижний padding оставляет место под декоративную стрелку на самом узком mobile. */
     padding: 34px 18px 58px;
   }
 }

@@ -15,7 +15,9 @@
 .our-products-buttons {
   gap: 20px;
   display: flex;
+  /* Кнопки фильтра могут переноситься, если на mobile им не хватает ширины. */
   flex-wrap: wrap;
+  /* После переноса кнопки остаются визуально по центру секции. */
   justify-content: center;
 
   color: #636ae8;
@@ -25,8 +27,11 @@
 
 .our-products-cards {
   gap: 30px;
+  /* Grid удобнее flex для адаптива: можно явно задать 4/2/1 колонки без ручных ширин карточек. */
   display: grid;
+  /* minmax(0, 1fr) не даёт содержимому карточек расталкивать колонку шире контейнера. */
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  /* Сетка занимает всю ширину родительского контейнера, а не только ширину контента. */
   width: 100%;
 
   font-family: "Inter";
@@ -36,13 +41,18 @@
   gap: 15px;
   display: flex;
   flex-direction: column;
+  /* Разрешает карточке сжиматься внутри grid-колонки без горизонтального overflow. */
   min-width: 0;
 }
 
 .product-card > img {
+  /* Изображение товара подстраивается под ширину карточки. */
   width: 100%;
+  /* Квадратное соотношение стабилизирует высоту карточек в сетке. */
   aspect-ratio: 1;
+  /* cover заполняет квадрат без искажения пропорций изображения. */
   object-fit: cover;
+  /* Небольшое скругление делает адаптивно обрезанные изображения аккуратнее. */
   border-radius: 8px;
 }
 
@@ -104,6 +114,7 @@
 }
 
 .product-shop-button {
+  /* Кнопка корзины не должна сжиматься, когда цена и описание занимают больше места. */
   flex: 0 0 auto;
   padding: 10px 10px;
   border-color: #636ae8;
@@ -114,26 +125,31 @@
 
 @media (max-width: 1023px) {
   .our-products-cards {
+    /* На планшете 4 карточки превращаются в 2 колонки, чтобы изображения не стали слишком маленькими. */
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 767px) {
   .our-products {
+    /* Сокращаем общий вертикальный gap секции на mobile. */
     gap: 36px;
   }
 
   .our-products-head {
+    /* Заголовок и фильтры становятся ближе, чтобы верх секции не занимал слишком много места. */
     gap: 26px;
   }
 }
 
 @media (max-width: 479px) {
   .our-products-cards {
+    /* На узком mobile карточки идут по одной в строке. */
     grid-template-columns: 1fr;
   }
 
   .product-card-active {
+    /* Активная кнопка фильтра получает меньший padding, чтобы помещаться вместе со второй кнопкой. */
     padding-inline: 26px;
   }
 }

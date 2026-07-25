@@ -136,47 +136,58 @@
 
 @media (max-width: 1023px) {
   .features-grid {
+    /* Планшетная сетка в 2 колонки заменяет сложные desktop-span'ы, которые тесно смотрятся на средней ширине. */
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-card:nth-child(n) {
+    /* Сбрасываем индивидуальные desktop span 2/4, чтобы каждая карточка занимала одну планшетную колонку. */
     grid-column: span 1;
   }
 
   .feature-card:nth-child(3),
   .feature-card:nth-child(4) {
+    /* Карточки с иллюстрациями складываются вертикально, чтобы текст и картинка не боролись за ширину. */
     align-items: flex-start;
     flex-direction: column;
   }
 
   .feature-card:nth-child(4) .feature-card-icon {
+    /* Убираем отрицательный desktop-margin, потому что на планшете он может вытащить картинку за карточку. */
     margin: 0;
   }
 
   .feature-card-icon {
+    /* Ограничиваем высоту иллюстраций, чтобы они не раздували карточки. */
     max-height: 190px;
+    /* Сохраняем визуальное смещение картинки вправо внутри вертикальной карточки. */
     align-self: flex-end;
   }
 }
 
 @media (max-width: 767px) {
   .features-grid {
+    /* На mobile карточки идут в одну колонку для нормального чтения и стабильной ширины. */
     grid-template-columns: 1fr;
   }
 
   .feature-card {
+    /* Padding уменьшается, чтобы внутри карточки оставалось место для текста. */
     padding: 26px;
   }
 
   .features-title {
+    /* Локальное уменьшение нужно, потому что .features-title раньше переопределял глобальный h2 размер. */
     font-size: 34px;
   }
 
   .feature-card-title {
+    /* Заголовок карточки уменьшается под mobile-контейнер. */
     font-size: 24px;
   }
 
   .feature-card-description {
+    /* Описание уменьшается, чтобы строки не были слишком длинными и карточки не становились чрезмерно высокими. */
     font-size: 16px;
   }
 }
