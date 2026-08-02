@@ -38,7 +38,7 @@ const PRODUCTS: Product[] = [
   },
   {
     icon: "/home/our-products/product-four.png",
-    bestSeller: false,
+    bestSeller: true,
     description: "Est veniam anim aute exercita",
     price: 48,
     discountPrice: 56,
@@ -89,7 +89,7 @@ export const OurProducts = () => {
       <section className="our-products-head">
         <h2>Our products</h2>
         <section className="our-products-buttons">
-          {buttons.map((button) => {
+          {buttons.map((button, index) => {
             const isActive = button === bestSellerButtonActive;
             const isHover = button === bestSellerButtonHover;
 
@@ -98,7 +98,10 @@ export const OurProducts = () => {
                 className={isActive ? "product-card-active" : undefined}
                 onMouseEnter={() => setbestSellerButtonHover(button)}
                 onMouseLeave={() => setbestSellerButtonHover("")}
-                style={isHover && isActive != true ? {color: "#565cc4"} : undefined}
+                style={
+                  isHover && isActive != true ? { color: "#565cc4" } : undefined
+                }
+                key={index}
                 onClick={() => {
                   setBestSellerButtonActive(button);
                 }}

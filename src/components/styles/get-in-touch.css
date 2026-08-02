@@ -1,18 +1,20 @@
 .get-in-touch {
   display: flex;
+  /* Возвращаем desktop-раскладку из main: левая часть остаётся слева, а большая форма уходит правее. */
   justify-content: space-between;
 
   background-color: #1d2128;
   width: 100%;
   height: fit-content;
-  padding: 70px 100px;
-  padding-bottom: 50px;
+  /* Горизонтальные поля связаны с общим контейнером, чтобы секция совпадала с header/footer. */
+  padding: 70px var(--page-inline-padding) 50px;
 
   color: white;
 }
 
 .get-in-touch-info {
-  gap: 160px;
+  /* Вертикальный промежуток плавно уменьшается, иначе на планшете левая колонка становится слишком высокой. */
+  gap: clamp(56px, 10vw, 160px);
   display: flex;
   flex-direction: column;
 
@@ -44,6 +46,8 @@
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  /* На desktop форма должна иметь ширину полей из main, иначе input с width: 100% схлопывается по контенту. */
+  width: 600px;
 }
 
 .get-in-touch-input {
@@ -65,7 +69,8 @@
 }
 
 .get-in-touch-input > input {
-  width: 600px;
+  /* Поле занимает всю desktop-ширину формы, которая совпадает с 600px из main. */
+  width: 100%;
   padding: 16px;
   background-color: #1d2128;
   border: 1px solid #dee1e6;
@@ -90,4 +95,31 @@
 
 .get-in-touch-submit:hover {
   background-color: #7076e2;
+}
+
+@media (max-width: 1023px) {
+  .get-in-touch {
+    /* На планшете форма уходит под текстовый блок, чтобы не сжиматься до неудобной ширины. */
+    gap: 48px;
+    flex-direction: column;
+  }
+
+  .get-in-touch-inputs {
+    /* Форма занимает доступную ширину контейнера после перехода в колонку. */
+    width: min(600px, 100%);
+  }
+}
+
+@media (max-width: 767px) {
+  .get-in-touch {
+    /* На мобильном уменьшаем вертикальные поля, чтобы секция не выглядела пустой. */
+    padding-top: 48px;
+    padding-bottom: 42px;
+  }
+
+  .get-in-touch-images {
+    /* Иконки/картинки могут переноситься, если им не хватает ширины. */
+    gap: 24px;
+    flex-wrap: wrap;
+  }
 }

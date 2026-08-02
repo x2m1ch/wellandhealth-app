@@ -1,8 +1,11 @@
 footer {
+  /* Gap нужен, чтобы при переносе колонок footer не слипался с формой подписки. */
+  gap: 48px;
   display: flex;
   justify-content: space-between;
 
-  padding: 70px 100px;
+  /* Footer использует общий горизонтальный padding, чтобы совпадать с шириной контента страниц. */
+  padding: 70px var(--page-inline-padding);
 }
 
 .footer-sections {
@@ -27,7 +30,8 @@ footer > section > section > h3 {
 }
 
 footer > section {
-  gap: 110px;
+  /* clamp сохраняет просторный desktop footer, но уменьшает расстояния между колонками на средних ширинах. */
+  gap: clamp(44px, 8vw, 110px);
   display: flex;
 }
 
@@ -67,6 +71,7 @@ input:focus {
   border-bottom-left-radius: 12px;
 
   padding-left: 20px;
+  max-width: 300px;
 }
 
 .subscribe-input-text::placeholder {
@@ -98,6 +103,42 @@ input:focus {
 .footer-info {
   gap: 10px;
   display: flex;
+  /* Legal-ссылки переносятся на новую строку, если им не хватает ширины. */
+  flex-wrap: wrap;
 
   font-size: 14px;
+}
+
+@media (max-width: 1023px) {
+  footer {
+    /* На планшете две большие части footer ставятся друг под другом, иначе форма подписки сжимает колонки. */
+    flex-direction: column;
+  }
+
+  footer > section {
+    /* Колонки footer могут переноситься, сохраняя равномерное распределение по строке. */
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    /* Уменьшаем вертикальные поля footer, чтобы он не занимал слишком много мобильного экрана. */
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  @media (max-width: 479px) {
+    footer > section {
+      /* На узком mobile footer-колонки идут одна под другой, чтобы каждая ссылка оставалась читаемой. */
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .subscribe-input-body {
+    max-width: 250px;
+  }
 }

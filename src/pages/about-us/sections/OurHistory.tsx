@@ -1,4 +1,6 @@
 import dateLine from "/about-us/our-history/date-line.svg";
+import decorOne from "/about-us/our-history/decor2.svg";
+import decorTwo from "/about-us/our-history/decor.svg";
 
 import "./styles/our-history.css";
 
@@ -33,15 +35,19 @@ export const OurHistory = () => {
         <h2>Our History</h2>
       </section>
       <section className="our-history-body">
-        <img src={dateLine} alt="" />
-        <section>
-          {ACTIONS.map((action) => (
-            <div className="date-action">
-              <h3>{action.date}</h3>
-              <p>{action.action}</p>
-            </div>
-          ))}
+        <img src={decorOne} alt="" />
+        <section className="our-history-items">
+          <img src={dateLine} alt="" />
+          <section>
+            {ACTIONS.map((action) => (
+              <div className="date-action">
+                <h3>{action.date}</h3>
+                <p>{action.action}</p>
+              </div>
+            ))}
+          </section>
         </section>
+        <img src={decorTwo} alt="" />
       </section>
     </section>
   );

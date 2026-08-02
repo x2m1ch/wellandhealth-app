@@ -5,19 +5,6 @@
   flex-direction: column;
 }
 
-.our-history::before {
-  content: url(/about-us/our-history/decor.svg);
-  position: absolute;
-  margin-left: 1250px;
-}
-
-.our-history::after {
-  content: url(/about-us/our-history/decor2.svg);
-  position: absolute;
-  margin-right: 1250px;
-  margin-top: 500px;
-}
-
 .our-history-head {
   gap: 10px;
   display: flex;
@@ -27,11 +14,9 @@
 
 .our-history-body {
   display: flex;
-
-  margin-left: 200px;
 }
 
-.our-history-body > section {
+.our-history-items > section {
   gap: 50px;
   display: flex;
   flex-direction: column;
@@ -39,17 +24,14 @@
   margin-top: 20px;
 }
 
-.our-history-body > img {
+.our-history-items > img {
   position: absolute;
   margin-left: 400px;
 }
-
-.date-action {
+*/ .date-action {
   gap: 5px;
   display: flex;
   flex-direction: column;
-
-  margin-right: 300px;
 }
 
 .date-action > h3 {

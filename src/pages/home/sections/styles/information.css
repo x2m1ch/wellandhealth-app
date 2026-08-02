@@ -8,6 +8,8 @@
     gap: 60px;
     display: flex;
     justify-content: center;
+    /* Кнопки табов могут переноситься на несколько строк вместо выхода за пределы мобильного экрана. */
+    flex-wrap: wrap;
 
     color: #636AE8;
 }
@@ -19,7 +21,11 @@
 }
 
 .information-body {
+    /* Gap нужен, чтобы текст и изображение не прижимались друг к другу на desktop/tablet. */
+    gap: 48px;
     display: flex;
+    /* Центрируем изображение относительно текстового блока в desktop-раскладке. */
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -39,6 +45,13 @@
     font-size: 40px;
 }
 
+.information-body > img {
+    /* Изображение занимает часть строки, но может сжиматься вместе с контейнером. */
+    flex: 0 1 48%;
+    /* min-width: 0 предотвращает flex-overflow, когда картинка шире доступной колонки. */
+    min-width: 0;
+}
+
 .information-blocks {
     gap: 10px;
     display: flex;
@@ -49,4 +62,36 @@
     color: #323842;
     font-weight: 700;
     font-size: 20px;
+}
+
+@media (max-width: 1023px) {
+    .switch-information-buttons {
+        /* На планшете уменьшаем расстояния между табами, чтобы перенос выглядел компактно. */
+        gap: 18px;
+    }
+
+    .information-body {
+        /* Текст и изображение ставятся вертикально, потому что горизонтальная раскладка становится тесной. */
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .information-body > img {
+        /* Картинка не шире контейнера и не больше разумного максимума. */
+        width: min(100%, 620px);
+        /* Центрируем картинку под текстом в вертикальной раскладке. */
+        align-self: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .information-button-active {
+        /* Активный таб получает меньший padding, чтобы кнопки помещались на mobile. */
+        padding: 12px 32px;
+    }
+
+    .information-main-heading {
+        /* Подзаголовок контента уменьшается под мобильную ширину. */
+        font-size: 32px;
+    }
 }

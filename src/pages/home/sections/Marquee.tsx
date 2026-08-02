@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import "./styles/marquee.css";
 
@@ -36,8 +36,6 @@ const getInitials = (name: string) => {
 };
 
 const COPIES_COUNT = 3;
-const CARD_WIDTH = 220;
-const CARD_GAP = 18;
 const CARDS_PER_CLICK = 3;
 const INITIAL_COPY_INDEX = 1;
 
@@ -46,8 +44,39 @@ export const Marquee = ({
   label = "Our customers",
 }: Partial<MarqueeProps>) => {
   const loopItems = Array.from({ length: COPIES_COUNT }, () => items).flat();
+  // Ref нужен, чтобы измерять реальную ширину CSS-карточки после применения media queries.
+  const listRef = useRef<HTMLDivElement>(null);
+  // 238px - desktop fallback: 220px карточка + 18px gap, чтобы transform был валидным до первого измерения DOM.
+  const [itemStep, setItemStep] = useState(238);
   const [activeIndex, setActiveIndex] = useState(items.length * INITIAL_COPY_INDEX);
   const [isTransitionEnabled, setIsTransitionEnabled] = useState(true);
+
+  useEffect(() => {
+    // Шаг прокрутки считаем из DOM, потому что на mobile ширина .marquee-item меняется в CSS.
+    const updateItemStep = () => {
+      const list = listRef.current;
+      const firstItem = list?.querySelector<HTMLElement>(".marquee-item");
+
+      // Если список ещё не отрисовался, оставляем fallback и не ломаем первый render.
+      if (!list || !firstItem) {
+        return;
+      }
+
+      // К ширине карточки добавляем gap списка, иначе каждый клик постепенно будет смещать ленту не по сетке.
+      const gap = Number.parseFloat(window.getComputedStyle(list).columnGap) || 0;
+      setItemStep(firstItem.offsetWidth + gap);
+    };
+
+    // Сразу измеряем текущий breakpoint после mount.
+    updateItemStep();
+    // При resize пересчитываем шаг, чтобы карусель продолжала совпадать с CSS-ширинами карточек.
+    window.addEventListener("resize", updateItemStep);
+
+    return () => {
+      // Чистим listener, чтобы компонент не оставлял подписку после размонтирования.
+      window.removeEventListener("resize", updateItemStep);
+    };
+  }, [items.length]);
 
   useEffect(() => {
     setIsTransitionEnabled(false);
@@ -106,11 +135,14 @@ export const Marquee = ({
 
         <div className="marquee-track">
           <div
+            // Ref привязан к track-list, потому что отсюда берём gap и первую карточку для расчёта itemStep.
+            ref={listRef}
             className={`marquee-list ${
               isTransitionEnabled ? "" : "marquee-list--no-transition"
             }`}
             style={{
-              transform: `translateX(-${activeIndex * (CARD_WIDTH + CARD_GAP)}px)`,
+              // Transform использует измеренный itemStep, поэтому один и тот же TS-код работает для desktop/tablet/mobile CSS.
+              transform: `translateX(-${activeIndex * itemStep}px)`,
             }}
             onTransitionEnd={normalizeIndex}
           >

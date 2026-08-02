@@ -1,9 +1,14 @@
 .get-started-area {
+  /* relative нужен для декоративной стрелки внутри CTA, чтобы она позиционировалась от самой секции. */
+  position: relative;
   display: flex;
   justify-content: center;
 
   width: 100%;
-  height: 240px;
+  /* min-height вместо height позволяет блоку расти, если текст переносится на мобильных. */
+  min-height: 240px;
+  /* overflow скрывает декоративную стрелку, если она подходит слишком близко к краю контейнера. */
+  overflow: hidden;
   background-color: white;
   border-radius: 20px;
   border-color: #171a1f;
@@ -17,15 +22,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* Внутренний padding защищает текст и кнопку от прилипания к рамке при переносах. */
+  padding: 38px 24px;
+  /* Центрирование текста нужно после разрешения переносов на узких экранах. */
+  text-align: center;
 }
 
 .get-started-area > section > h2 {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .get-started-area-image {
   position: absolute;
-  margin: 130px 0px 0px 400px;
+  /* Позиционируем стрелку от центра CTA: так она остаётся рядом со словом started и указывает на кнопку, как в основной ветке. */
+  top: 124px;
+  left: calc(50% + 160px);
   width: 70px;
 }
 
@@ -42,4 +53,17 @@
 
 .get-started-area-button:hover {
   background-color: #6fbc78;
+}
+
+@media (max-width: 770px) {
+  .get-started-area {
+    display: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .get-started-area > section {
+    /* Нижний padding оставляет место под декоративную стрелку на самом узком mobile. */
+    padding: 34px 18px 58px;
+  }
 }

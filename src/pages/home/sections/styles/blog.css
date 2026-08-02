@@ -6,6 +6,8 @@
 .blog {
   gap: 40px;
   display: flex;
+  /* Выравниваем верх текстового блока и карточек, чтобы desktop-секция не растягивала их по высоте. */
+  align-items: flex-start;
 
   font-family: "Inter";
 }
@@ -46,17 +48,29 @@
 
 .blog-cards {
   gap: 20px;
-  display: flex;
+  /* Grid заменяет flex, чтобы карточки равномерно делили доступную ширину и легко меняли число колонок. */
+  display: grid;
+  /* Три desktop-колонки соответствуют исходному количеству карточек и не требуют фиксированной ширины 302px. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  /* Сетка занимает весь остаток ширины рядом с информационным блоком. */
+  width: 100%;
 }
 
 .blog-card {
   background-color: white;
   border-radius: 20px;
   box-shadow: 0 4px 9px #cdcfd1;
-  width: 302px;
+  /* Карточка может сжиматься внутри grid-колонки без горизонтального overflow. */
+  min-width: 0;
 }
 
 .blog-card-image {
+  /* Изображение растягивается по ширине карточки вместо фиксированной ширины. */
+  width: 100%;
+  /* aspect-ratio сохраняет пропорцию исходной карточки при адаптивном изменении ширины. */
+  aspect-ratio: 302 / 196;
+  /* cover не искажает изображение и заполняет заданную область. */
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -103,4 +117,41 @@
 .ladel-two {
   color: var(--ladel-two);
   background-color: #FDF1F5;
+}
+
+@media (max-width: 1199px) {
+  .blog {
+    /* На small desktop/tablet карточки уходят под описание, потому что боковая раскладка становится тесной. */
+    flex-direction: column;
+  }
+
+  .blog-information {
+    /* Верхний информационный блок занимает всю ширину над карточками. */
+    width: 100%;
+    /* Текст и кнопки переключения остаются в одной строке, пока ширины хватает. */
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-information {
+    /* На mobile текст и кнопки переключения идут вертикально. */
+    flex-direction: column;
+  }
+
+  .blog-cards-switch-buttons {
+    /* Кнопки переключения прижимаем влево, чтобы они не висели отдельно справа после переноса. */
+    justify-content: flex-start;
+  }
+
+  .blog-cards {
+    /* Mobile-раскладка: одна карточка в строке для нормальной читаемости. */
+    grid-template-columns: 1fr;
+  }
+
+  .blog-information-name {
+    /* Заголовок Blog уменьшается, чтобы соответствовать мобильному масштабу h2. */
+    font-size: 34px;
+  }
 }

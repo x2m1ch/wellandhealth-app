@@ -45,7 +45,8 @@ const LINKS = {
       body: "Track Order",
     },
     {
-
+      // Без to TypeScript падал на build, потому что Footer использует тип Links из SiteHeader.
+      to: "/faq",
       body: "FAQs",
     },
   ],
