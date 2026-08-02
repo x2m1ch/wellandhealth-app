@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
 
-  margin-top: 200px;
+  margin-top: 80px;
 }
 
 .video-section > img {
@@ -27,4 +27,16 @@
   background-color: #676dd6;
 
   color: white;
+}
+
+@media (max-width: 960px) {
+  .video-section {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .video-section {
+    display: none;
+  }
 }

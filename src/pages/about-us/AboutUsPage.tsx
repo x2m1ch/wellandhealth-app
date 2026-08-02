@@ -6,17 +6,20 @@ import { Founders } from "./sections/Founders";
 import { OurHistory } from "./sections/OurHistory";
 import { Video } from "./sections/Video";
 
+import "./styles/about-us.css";
+
 export const AboutUsPage = () => {
   return (
     <>
       <section className="app-pages">
         <AboutUs />
         <Founders />
-        <OurHistory />
-        <Video />
-        <Get heading="Getting started"/>
       </section>
-
+      <OurHistory />
+      <section className="app-pages about-us-bottom">
+        <Video />
+        <Get heading="Getting started" />
+      </section>
       <GetInTouch />
       <Footer />
     </>
