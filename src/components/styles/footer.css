@@ -71,6 +71,7 @@ input:focus {
   border-bottom-left-radius: 12px;
 
   padding-left: 20px;
+  max-width: 300px;
 }
 
 .subscribe-input-text::placeholder {
@@ -128,27 +129,16 @@ input:focus {
     padding-bottom: 48px;
   }
 
-  .subscribe-input {
-    /* Поле email и кнопка подписки становятся вертикальными, потому что горизонтальная форма слишком широкая для mobile. */
-    align-items: stretch;
-    flex-direction: column;
-    max-width: 420px;
-  }
-
-  .subscribe-input-body {
-    /* После вертикального раскладывания у input больше нет общей рамки с кнопкой, поэтому скругляем все углы. */
-    border-radius: 12px;
-  }
-
-  .subscribe-input-button {
-    /* Кнопка тоже получает полное скругление, чтобы не оставались desktop-углы только справа. */
-    border-radius: 12px;
+  @media (max-width: 479px) {
+    footer > section {
+      /* На узком mobile footer-колонки идут одна под другой, чтобы каждая ссылка оставалась читаемой. */
+      flex-direction: column;
+    }
   }
 }
 
-@media (max-width: 479px) {
-  footer > section {
-    /* На узком mobile footer-колонки идут одна под другой, чтобы каждая ссылка оставалась читаемой. */
-    flex-direction: column;
+@media (max-width: 440px) {
+  .subscribe-input-body {
+    max-width: 250px;
   }
 }

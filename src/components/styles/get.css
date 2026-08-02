@@ -55,32 +55,9 @@
   background-color: #6fbc78;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 770px) {
   .get-started-area {
-    /* CTA становится немного ниже desktop-версии, но остаётся достаточно высоким для перенесённого заголовка. */
-    min-height: 220px;
-    /* Меньший radius лучше соответствует компактному мобильному блоку. */
-    border-radius: 16px;
-  }
-
-  .get-started-area > section > h2,
-  .get-started-area-button {
-    /* Убираем desktop-смещение влево: на мобильном элементы должны быть реально по центру. */
-    margin-left: 0;
-  }
-
-  .get-started-area-button {
-    /* Кнопка остаётся крупной, но уже не занимает чрезмерную ширину экрана. */
-    padding-inline: 48px;
-  }
-
-  .get-started-area-image {
-    /* На mobile стрелку уводим в угол и уменьшаем, чтобы она не перекрывала кнопку. */
-    top: auto;
-    left: auto;
-    right: 18px;
-    bottom: 18px;
-    width: 54px;
+    display: none;
   }
 }
 
