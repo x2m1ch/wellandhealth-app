@@ -6,8 +6,6 @@ import { Founders } from "./sections/Founders";
 import { OurHistory } from "./sections/OurHistory";
 import { Video } from "./sections/Video";
 
-import "./styles/about-us.css";
-
 export const AboutUsPage = () => {
   return (
     <>
