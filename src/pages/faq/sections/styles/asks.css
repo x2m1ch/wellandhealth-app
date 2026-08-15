@@ -1,5 +1,6 @@
 .asks {
     display: flex;
+    gap: 60px;
     justify-content: space-between;
 }
 
@@ -39,6 +40,8 @@
     gap: 20px;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
 
 .asks-info > article {
@@ -48,27 +51,47 @@
 
     border-bottom: #DEE1E6 1px solid;
     padding-bottom: 10px;
+    width: 100%;
 }
 
 .asks-info > article > div {
-    gap: 450px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 24px;
+    width: 100%;
 }
 
 .asks-info > article > div > h3 {
     font-size: 24px;
     font-weight: 600;
+    min-width: 0;
+}
+
+.asks-info > article > div > img {
+    flex-shrink: 0;
 }
 
 .asks-info > article > p {
     font-size: 15px;
     font-weight: 500;
 
-    max-width: 600px;
+    max-width: 100%;
 }
 
 .asks-text {
     display: none;
+}
+
+@media (max-width: 767px) {
+    .asks {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .asks-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
 }
